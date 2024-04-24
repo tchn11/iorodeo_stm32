@@ -2,6 +2,9 @@
 #define PS_KEYVALUE_COMMAND_H
 
 #include "ps_constants.h"
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 namespace ps
 {
@@ -11,53 +14,53 @@ namespace ps
     {
         public:
             KeyValueCommand() {};
-            KeyValueCommand(String key, String value, ReturnStatus (T::*method)(JsonObject&,JsonObject&));
+            KeyValueCommand(string key, string value, ReturnStatus (T::*method)(JsonObject&,JsonObject&));
 
-            String key();
-            void setKey(String key);
+            string key();
+            void setKey(string key);
 
-            String value();
-            void setValue(String value);
+            string value();
+            void setValue(string value);
 
             void setMethod(ReturnStatus (T::*method)(JsonObject&,JsonObject&));
             ReturnStatus applyMethod(T* client, JsonObject &jsonMsg, JsonObject &jsonDat);
 
         protected:
-            String key_;
-            String value_;
+            string key_;
+            string value_;
             ReturnStatus (T::*method_)(JsonObject&,JsonObject&) = nullptr;
     };
 
 
     template<typename T>
-    KeyValueCommand<T>::KeyValueCommand(String key, String value, ReturnStatus (T::*method)(JsonObject&,JsonObject&))
+    KeyValueCommand<T>::KeyValueCommand(string key, string value, ReturnStatus (T::*method)(JsonObject&,JsonObject&))
         : key_(key), value_(value), method_(method) 
     {}
 
 
     template<typename T>
-    String KeyValueCommand<T>::key()
+    string KeyValueCommand<T>::key()
     {
         return key_;
     }
 
 
     template<typename T>
-    void KeyValueCommand<T>::setKey(String key)
+    void KeyValueCommand<T>::setKey(string key)
     {
         key_ = key;
     }
 
 
     template<typename T>
-    String KeyValueCommand<T>::value()
+    string KeyValueCommand<T>::value()
     {
         return value_;
     }
 
 
     template<typename T>
-    void KeyValueCommand<T>::setValue(String value)
+    void KeyValueCommand<T>::setValue(string value)
     {
         value_ = value;
     }

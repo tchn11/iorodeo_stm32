@@ -1,6 +1,8 @@
 #include "ps_constant_test.h"
 #include "ps_time_utils.h"
 #include "ps_constants.h"
+#include "string"
+using namespace std;
 
 namespace ps
 {
@@ -133,7 +135,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = ValueKey + String(" not a float");
+                string errorMsg = ValueKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -152,7 +154,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = DurationKey + String(" not uint32");
+                string errorMsg = DurationKey + string(" not uint32");
                 status.appendToMessage(errorMsg);
             }
         }

@@ -1,6 +1,8 @@
 #include "ps_base_test.h"
 #include "ps_constants.h"
 #include "ps_time_utils.h"
+#include "string"
+using namespace std;
 
 namespace ps
 {
@@ -47,13 +49,13 @@ namespace ps
 
     float BaseTest::getMaxValue() const 
     { 
-        return max(quietValue_,0.0); 
+        return max(quietValue_,0.0f);
     }
 
 
     float BaseTest::getMinValue() const 
     { 
-        return min(quietValue_,0.0); 
+        return min(quietValue_,0.0f);
     }
 
     void BaseTest::setQuietTime(uint64_t quietTime)
@@ -98,13 +100,13 @@ namespace ps
     }
 
 
-    void BaseTest::setName(String name)
+    void BaseTest::setName(string name)
     {
         name_ = name;
     }
 
     
-    String BaseTest::getName()
+    string BaseTest::getName()
     {
         return name_;
     }
@@ -175,14 +177,14 @@ namespace ps
         if (!json.containsKey(ParamKey))
         {
             status.success = false;
-            String errorMsg = String("key ") + ParamKey + String(" missing");
+            string errorMsg = string("key ") + ParamKey + string(" missing");
             status.appendToMessage(errorMsg);
             return json;
         }
         if (!json[ParamKey].is<JsonObject>())
         {
             status.success = false;
-            String errorMsg = ParamKey + String(" not JsonObject");
+            string errorMsg = ParamKey + string(" not JsonObject");
             status.appendToMessage(errorMsg);
             return json;
         }
@@ -206,7 +208,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = QuietValueKey + String(" not a float");
+                string errorMsg = QuietValueKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -225,7 +227,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = QuietTimeKey + String(" not uint32");
+                string errorMsg = QuietTimeKey + string(" not uint32");
                 status.appendToMessage(errorMsg);
             }
         }

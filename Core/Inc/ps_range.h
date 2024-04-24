@@ -1,6 +1,13 @@
 #ifndef PS_RANGE_H
 #define PS_RANGE_H
 
+#include "string"
+#include "math.h"
+#include "stdint.h"
+using namespace std;
+
+#define constrain(val, mn, mx) val < mn ? mn : (val > mx ? mx : val)
+
 namespace ps
 {
 
@@ -10,8 +17,8 @@ namespace ps
         public:
 
             Range() {};
-            Range(String name, float minValue, float maxValue, GainType gain, IntType maxInt);
-            String name() const;
+            Range(string name, float minValue, float maxValue, GainType gain, IntType maxInt);
+            string name() const;
             float minValue() const;
             float maxValue() const;
             GainType gain() const;
@@ -21,7 +28,7 @@ namespace ps
 
         private:
 
-            String name_;
+            string name_;
             float minValue_;
             float maxValue_;
             GainType gain_;
@@ -31,12 +38,12 @@ namespace ps
 
 
     template<typename GainType, typename IntType>
-    Range<GainType,IntType>::Range(String name, float minValue, float maxValue, GainType gain, IntType maxInt)
+    Range<GainType,IntType>::Range(string name, float minValue, float maxValue, GainType gain, IntType maxInt)
         : name_(name), minValue_(minValue), maxValue_(maxValue), gain_(gain), maxInt_(maxInt)
     {}
 
     template<typename GainType, typename IntType>
-    String Range<GainType,IntType>::name() const
+    string Range<GainType,IntType>::name() const
     {
         return name_;
     }

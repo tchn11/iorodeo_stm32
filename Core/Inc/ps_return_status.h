@@ -1,7 +1,9 @@
 #ifndef PS_RETURN_STATUS_H
 #define PS_RETURN_STATUS_H
 
-#include <Arduino.h>
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 namespace ps
 {
@@ -12,10 +14,10 @@ namespace ps
         public:
 
             ReturnStatus() { };
-            void appendToMessage(String value); 
+            void appendToMessage(string value);
 
             bool success = true;;
-            String message;
+            string message;
 
     };
 

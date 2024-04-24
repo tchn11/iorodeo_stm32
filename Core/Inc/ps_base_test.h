@@ -1,11 +1,13 @@
 #ifndef PS_BASE_TEST_H
 #define PS_BASE_TEST_H
 
-#include <Arduino.h>
 #include "ps_sample.h"
 #include "ps_constants.h"
 #include "ps_return_status.h"
 #include "ArduinoJson.h"
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 namespace ps
 {
@@ -35,8 +37,8 @@ namespace ps
             virtual void setSamplePeriod(uint64_t samplePeriod);
             virtual uint64_t getSamplePeriod() const;
 
-            virtual void setName(String name);
-            virtual String getName();
+            virtual void setName(string name);
+            virtual string getName();
 
             virtual void setSampleMethod(SampleMethod sampleMethod);
             virtual SampleMethod getSampleMethod() const;
@@ -54,7 +56,7 @@ namespace ps
             float quietValue_ = 0.0;
             uint64_t samplePeriod_ = 0;
             uint32_t sampleModulus_ = 0;
-            String name_ = String("base");
+            string name_ = string("base");
             SampleMethod sampleMethod_ = SampleGeneric;
             bool muxCompatible_ = false;
 

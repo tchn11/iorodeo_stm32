@@ -1,9 +1,11 @@
 #ifndef PS_CURR_RANGE_H
 #define PS_CURR_RANGE_H
 
-#include <Arduino.h>
 #include "ps_range.h"
 #include "ps_gains.h"
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 namespace ps
 {
@@ -13,7 +15,7 @@ namespace ps
         public: 
             CurrRange() : Range<CurrGainPath,uint16_t>()  {};
 
-            CurrRange(String name, float minValue, float maxValue, CurrGainPath currGainPath, uint16_t maxInt)
+            CurrRange(string name, float minValue, float maxValue, CurrGainPath currGainPath, uint16_t maxInt)
                 : Range<CurrGainPath,uint16_t>(name, minValue, maxValue, currGainPath, maxInt) {};
     
     };

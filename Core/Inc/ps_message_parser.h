@@ -1,9 +1,11 @@
 #ifndef PS_MESSAGE_PARSER_H
 #define PS_MESSAGE_PARSER_H
 
-#include <Arduino.h>
 #include "ps_constants.h"
 #include "ArduinoJson.h"
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 namespace ps
 {
@@ -14,7 +16,7 @@ namespace ps
         public:
 
             MessageParser();
-            JsonObject& parse(String &message, StaticJsonBuffer<JsonMessageBufferSize> &jsonBuffer);
+            JsonObject& parse(string &message, StaticJsonBuffer<JsonMessageBufferSize> &jsonBuffer);
 
     };
 

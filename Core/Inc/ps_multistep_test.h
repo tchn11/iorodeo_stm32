@@ -5,6 +5,9 @@
 #include "ps_time_utils.h"
 #include "Array.h"
 #include "ArduinoJson.h"
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 namespace ps
 {
@@ -15,7 +18,7 @@ namespace ps
 
         public:
 
-            //static const String StepArrayKey;
+            //static const string StepArrayKey;
 
             MultiStepTest(size_t numStep=5);
 
@@ -53,7 +56,7 @@ namespace ps
 
 
     //template<size_t MAX_SIZE>
-    //const String MultiStepTest<MAX_SIZE>::StepArrayKey = String("step");
+    //const string MultiStepTest<MAX_SIZE>::StepArrayKey = string("step");
 
 
     template<size_t MAX_SIZE>
@@ -314,7 +317,7 @@ namespace ps
         if (!jsonMsgPrm.containsKey(StepArrayKey))
         {
             status.success = false;
-            String errorMsg = StepArrayKey + String(" key not found");
+            string errorMsg = StepArrayKey + string(" key not found");
             status.appendToMessage(errorMsg);
             return;
         }
@@ -322,7 +325,7 @@ namespace ps
         if (!jsonMsgPrm[StepArrayKey].is<JsonArray&>())
         {
             status.success = false;
-            String errorMsg = StepArrayKey + String(" not a JsonArray");
+            string errorMsg = StepArrayKey + string(" not a JsonArray");
             status.appendToMessage(errorMsg);
             return;
         }
@@ -332,7 +335,7 @@ namespace ps
         if (jsonStepArray.size() > MAX_SIZE)
         {
             status.success = false;
-            String errorMsg = StepArrayKey + String(" array too large");
+            string errorMsg = StepArrayKey + string(" array too large");
             status.appendToMessage(errorMsg);
             return;
         }
@@ -355,7 +358,7 @@ namespace ps
                     else
                     {
                         status.success = false;
-                        String errorMsg = StepArrayKey + String(" item[0] not uint32");
+                        string errorMsg = StepArrayKey + string(" item[0] not uint32");
                         status.appendToMessage(errorMsg);
                         break;
                     }
@@ -367,7 +370,7 @@ namespace ps
                     else
                     {
                         status.success = false;
-                        String errorMsg = StepArrayKey + String(" item[1] not float");
+                        string errorMsg = StepArrayKey + string(" item[1] not float");
                         status.appendToMessage(errorMsg);
                         break;
                     }
@@ -375,7 +378,7 @@ namespace ps
                 else
                 {
                     status.success = false;
-                    String errorMsg = StepArrayKey + String(" item size!=2");
+                    string errorMsg = StepArrayKey + string(" item size!=2");
                     status.appendToMessage(errorMsg);
                     break;
                 }
@@ -384,7 +387,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = StepArrayKey + String(" item not JsonArary");
+                string errorMsg = StepArrayKey + string(" item not JsonArary");
                 status.appendToMessage(errorMsg);
                 break;
             }

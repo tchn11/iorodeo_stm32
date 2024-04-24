@@ -1,12 +1,14 @@
 #ifndef PS_COMMAND_TABLE_H 
 #define PS_COMMAND_TABLE_H 
 
-#include <Arduino.h> 
 #include "ps_return_status.h"
 #include "ps_keyvalue_command.h"
 #include "ps_constants.h"
 #include "ArduinoJson.h"
 #include "Array.h"
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 namespace ps
 {
@@ -26,9 +28,9 @@ namespace ps
             size_t maxSize();
 
             void setClient(T *client);
-            void registerMethod(String key, String value, ReturnStatus (T::*method)(JsonObject&,JsonObject&));
+            void registerMethod(string key, string value, ReturnStatus (T::*method)(JsonObject&,JsonObject&));
 
-            ReturnStatus apply(String key, JsonObject &jsonMsg, JsonObject &jsonDat);
+            ReturnStatus apply(string key, JsonObject &jsonMsg, JsonObject &jsonDat);
 
         protected:
 
@@ -79,28 +81,26 @@ namespace ps
 
 
     template<typename T, size_t MAX_SIZE>
-    void CommandTable<T,MAX_SIZE>::registerMethod(String key, String value, ReturnStatus (T::*method)(JsonObject&,JsonObject&))
+    void CommandTable<T,MAX_SIZE>::registerMethod(string key, string value, ReturnStatus (T::*method)(JsonObject&,JsonObject&))
     {
         KeyValueCommand<T> kvCommand(key,value,method);
         table_.push_back(kvCommand);
     }
 
-
-
     template<typename T, size_t MAX_SIZE>
-    ReturnStatus CommandTable<T,MAX_SIZE>::apply(String key, JsonObject &jsonMsg, JsonObject &jsonDat)
+    ReturnStatus CommandTable<T,MAX_SIZE>::apply(string key, JsonObject &jsonMsg, JsonObject &jsonDat)
     {
         ReturnStatus status;
         if (client_!= nullptr)
         {
             if ( jsonMsg.containsKey(key.c_str()) )
             {
-                String cmd = String((const char *)(jsonMsg[key]));
-                cmd.trim();
+                string cmd = string((const char *)(jsonMsg[key]));
+                //cmd.trim();
                 bool found = false;
                 for (size_t i=0; i<table_.size(); i++)
                 {
-                    if (cmd.equals(table_[i].value()))
+                    if (cmd.compare(table_[i].value()))
                     {
                         found = true;
                         jsonDat.set(CommandKey,jsonMsg[key]);
@@ -111,7 +111,7 @@ namespace ps
                 if (!found)
                 {
                     status.success = false;
-                    status.message = String("command, ") + cmd + String(", not found");;
+                    status.message = string("command, ") + cmd + string(", not found");;
                 }
             }
             else

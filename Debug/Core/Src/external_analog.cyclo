@@ -1,0 +1,2 @@
+../Core/Src/external_analog.cpp:17:1:spi_analog::spi_analog()	1
+../Core/Src/external_analog.cpp:41:6:void spi_analog::work()	3

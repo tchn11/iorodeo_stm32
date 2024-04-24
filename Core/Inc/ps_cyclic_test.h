@@ -1,7 +1,6 @@
 #ifndef PS_CYCLIC_TEST_H
 #define PS_CYCLIC_TEST_H
 
-#include <Arduino.h>
 #include "ps_periodic_test.h"
 
 namespace ps

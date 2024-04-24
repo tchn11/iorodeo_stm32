@@ -1,5 +1,8 @@
 #include "ps_message_receiver.h"
 #include "usbd_cdc_if.h"
+#include "string"
+using namespace std;
+
 namespace ps
 {
     MessageReceiver::MessageReceiver() 
@@ -16,8 +19,9 @@ namespace ps
     {
         //while(Serial.available() > 0)
         //{
-            char byte;
-            CDC_Receive_FS(&byte, 1);
+            uint8_t byte;
+            uint32_t len = 1;
+            CDC_Receive_FS(&byte, &len);
             if (!serialBuffer_.full())
             {
                 serialBuffer_.push_back(byte);
@@ -35,9 +39,9 @@ namespace ps
     }
 
 
-    String MessageReceiver::next()
+    string MessageReceiver::next()
     {
-        String message("");
+        string message("");
         if (messageCnt_ > 0)
         {
             {  // Begin atomic block  
@@ -49,7 +53,7 @@ namespace ps
                     {
                         break;
                     }
-                    message += String(byte);
+                    message.append(string(&byte));
                 }
                 messageCnt_--;
             } // End atomic block

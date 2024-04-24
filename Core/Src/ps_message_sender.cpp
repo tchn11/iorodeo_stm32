@@ -17,8 +17,8 @@ namespace ps
             jsonMsg.set(MessageKey, status.message);
         }
         jsonMsg.set(ResponseKey, jsonDat);
-        jsonMsg.printTo(Serial);
-        Serial.println();
+        //jsonMsg.printTo(Serial);
+        //Serial.println();
     }
 
     void MessageSender::sendSample(Sample sample)
@@ -32,16 +32,16 @@ namespace ps
         {
             jsonSample.set(ChanKey, sample.chan);
         }
-        jsonSample.printTo(Serial);
-        Serial.println();
+        //jsonSample.printTo(Serial);
+        //Serial.println();
     }
 
     void MessageSender::sendSampleEnd()
     {
         StaticJsonBuffer<JsonMessageBufferSize> jsonBuffer;
         JsonObject &jsonSample = jsonBuffer.createObject();
-        jsonSample.printTo(Serial);
-        Serial.println();
+        //jsonSample.printTo(Serial);
+        //Serial.println();
     }
 
 } // namespace ps

@@ -1,10 +1,12 @@
 #include "ps_gains.h"
+#include "string"
+using namespace std;
 
 namespace ps 
 {
-    String voltGainToString(VoltGain value)
+    string voltGainToString(VoltGain value)
     {
-        String rval("");
+        string rval("");
         if (value < NumVoltGain)
         {
             rval = VoltGainStringArray[value];
@@ -12,9 +14,9 @@ namespace ps
         return rval;
     }
 
-    String currGainPathToString(CurrGainPath value)
+    string currGainPathToString(CurrGainPath value)
     {
-        String rval("");
+        string rval("");
         if (value < NumCurrGainPath)
         {
             rval = CurrGainPathStringArray[value];

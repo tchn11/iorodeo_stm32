@@ -1,11 +1,13 @@
 #include "ps_system_state.h"
 #include "ps_device_id_nvmem.h"
+#include "string"
+using namespace std;
 
 //#if defined DEVBOARD_TEENSY
 //    #include "ps_device_id_eeprom.h"
 //#endif
 #if defined DEVBOARD_ITSY_BITSY
-    #include "SAMD51_InterruptTimer.h"
+    //#include "SAMD51_InterruptTimer.h"
     //#include "ps_device_id_flash.h"
 #endif
 
@@ -103,7 +105,7 @@ namespace ps
         if (test_ == nullptr)
         {
             status.success = false;
-            status.message = String("something is wrong, test_ == nullptr");
+            status.message = string("something is wrong, test_ == nullptr");
             return status;
         }
 
@@ -113,13 +115,13 @@ namespace ps
             if (!(test_ -> isMuxCompatible()))
             {
                 status.success = false;
-                status.message = String("test, ") + (test_ -> getName()) + String(", is not mux compatible");
+                status.message = string("test, ") + (test_ -> getName()) + string(", is not mux compatible");
                 return status;
             }
             if (multiplexer_.numEnabledWrkElect() <= 0)
             {
                 status.success = false;
-                status.message = String("mux running, but no enabled working electrode channels");
+                status.message = string("mux running, but no enabled working electrode channels");
                 return status;
             }
             else
@@ -159,14 +161,14 @@ namespace ps
         if (!jsonMsg.containsKey(VoltKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + VoltKey;
+            status.message = string("json does not contain key: ") + VoltKey;
             return status;
         }
 
         if ( !(jsonMsg[VoltKey].is<float>() || jsonMsg[VoltKey].is<long>()) )
         {
             status.success = false;
-            status.message = String("unable to convert volt to float");
+            status.message = string("unable to convert volt to float");
             return status;
         }
 
@@ -225,11 +227,11 @@ namespace ps
         if (!jsonMsg.containsKey(VoltRangeKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + VoltRangeKey;
+            status.message = string("json does not contain key: ") + VoltRangeKey;
         }
         else
         {
-            String voltRangeName = String((const char *)(jsonMsg[VoltRangeKey]));
+            string voltRangeName = string((const char *)(jsonMsg[VoltRangeKey]));
             status = analogSubsystem_.setVoltRangeByName(voltRangeName);
             jsonDat.set(VoltRangeKey,analogSubsystem_.getVoltRangeName());
         }
@@ -251,11 +253,11 @@ namespace ps
         if (!jsonMsg.containsKey(CurrRangeKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + CurrRangeKey;
+            status.message = string("json does not contain key: ") + CurrRangeKey;
         }
         else
         {
-            String currRangeName = String((const char *)(jsonMsg[CurrRangeKey]));
+            string currRangeName = string((const char *)(jsonMsg[CurrRangeKey]));
             status = analogSubsystem_.setCurrRangeByName(currRangeName);
             jsonDat.set(CurrRangeKey,analogSubsystem_.getCurrRangeName());
         }
@@ -304,14 +306,14 @@ namespace ps
         if (!jsonMsg.containsKey(SamplePeriodKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + SamplePeriodKey;
+            status.message = string("json does not contain key: ") + SamplePeriodKey;
         }
         else
         {
             if (!jsonMsg[SamplePeriodKey].is<uint32_t>())
             {
                 status.success = false;
-                status.message = String("json ") + SamplePeriodKey + String(" value is not uin32_t");
+                status.message = string("json ") + SamplePeriodKey + string(" value is not uin32_t");
             }
             else
             {
@@ -320,12 +322,12 @@ namespace ps
                 if (samplePeriodUs > MaximumSamplePeriod)
                 {
                     status.success = false;
-                    status.message = String("json ") + SamplePeriodKey + String(" value is too large");
+                    status.message = string("json ") + SamplePeriodKey + string(" value is too large");
                 }
                 else if (samplePeriodUs < MinimumSamplePeriod)
                 {
                     status.success = false;
-                    status.message = String("json ") + SamplePeriodKey + String(" value is too small");
+                    status.message = string("json ") + SamplePeriodKey + string(" value is too small");
                 }
                 else
                 {
@@ -383,14 +385,14 @@ namespace ps
         if (!jsonMsg.containsKey(MuxEnabledKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + MuxEnabledKey;
+            status.message = string("json does not contain key: ") + MuxEnabledKey;
             return status;
         }
 
         if ( !(jsonMsg[MuxEnabledKey].is<bool>()) )
         {
             status.success = false;
-            status.message = String("unable to convert muxEnabled to bool");
+            status.message = string("unable to convert muxEnabled to bool");
             return status;
         }
 
@@ -411,7 +413,7 @@ namespace ps
         jsonDat.set(MuxEnabledKey,multiplexer_.isRunning());
 #else
         status.success = false;
-        status.message = String("multiplexer hardware not supported");
+        status.message = string("multiplexer hardware not supported");
 #endif
         return status;
     }
@@ -436,13 +438,13 @@ namespace ps
         if (!jsonMsg.containsKey(MuxChannelKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + MuxChannelKey;
+            status.message = string("json does not contain key: ") + MuxChannelKey;
             return status;
         }
         if (!jsonMsg[MuxChannelKey].is<JsonArray&>()) 
         {
             status.success = false;
-            status.message = MuxChannelKey + String(" not a JsonArray");
+            status.message = MuxChannelKey + string(" not a JsonArray");
             return status;
         }
 
@@ -450,7 +452,7 @@ namespace ps
         if (jsonMuxChannelArray.size() > NumMuxChan)
         {
             status.success = false;
-            status.message = MuxChannelKey + String(" array too large");
+            status.message = MuxChannelKey + string(" array too large");
             return status;
         }
 
@@ -467,14 +469,14 @@ namespace ps
                 else
                 {
                     status.success = false;
-                    status.message = MuxChannelKey + String(" element out of range");
+                    status.message = MuxChannelKey + string(" element out of range");
                     break;
                 }
             }
             else
             {
                 status.success = false;
-                status.message = MuxChannelKey + String(" element not an int");
+                status.message = MuxChannelKey + string(" element not an int");
                 break;
             }
         }
@@ -490,7 +492,7 @@ namespace ps
         }
 #else
         status.success = false;
-        status.message = String("multiplexer hardware not supported");
+        status.message = string("multiplexer hardware not supported");
 #endif
         return status;
     }
@@ -507,7 +509,7 @@ namespace ps
         }
 #else
         status.success = false;
-        status.message = String("multiplexer hardware not supported");
+        status.message = string("multiplexer hardware not supported");
 #endif
         return status;
     }
@@ -526,21 +528,21 @@ namespace ps
         if (!jsonMsg.containsKey(ConnectedKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + ConnectedKey;
+            status.message = string("json does not contain key: ") + ConnectedKey;
             return status;
         }
 
         if ( !(jsonMsg[ConnectedKey].is<bool>()) )
         {
             status.success = false;
-            status.message = String("unable to convert ") + ConnectedKey + String(" to bool");
+            status.message = string("unable to convert ") + ConnectedKey + string(" to bool");
             return status;
         }
 
         if (!multiplexer_.isRunning())
         {
             status.success = false;
-            status.message = String("mux not enabled - unable to connect/disconnect");
+            status.message = string("mux not enabled - unable to connect/disconnect");
             return status;
         }
 
@@ -556,7 +558,7 @@ namespace ps
         jsonDat.set(ConnectedKey,multiplexer_.isConnectedRef());
 #else
         status.success = false;
-        status.message = String("multiplexer hardware not supported");
+        status.message = string("multiplexer hardware not supported");
 #endif
         return status;
     }
@@ -575,7 +577,7 @@ namespace ps
         }
 #else
         status.success = false;
-        status.message = String("multiplexer hardware not supported");
+        status.message = string("multiplexer hardware not supported");
 #endif
         return status;
     }
@@ -587,21 +589,21 @@ namespace ps
         if (!jsonMsg.containsKey(ConnectedKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + ConnectedKey;
+            status.message = string("json does not contain key: ") + ConnectedKey;
             return status;
         }
 
         if ( !(jsonMsg[ConnectedKey].is<bool>()) )
         {
             status.success = false;
-            status.message = String("unable to convert '") + ConnectedKey + String("' to bool");
+            status.message = string("unable to convert '") + ConnectedKey + string("' to bool");
             return status;
         }
 
         if (!multiplexer_.isRunning())
         {
             status.success = false;
-            status.message = String("mux not enabled - unable to connect/disconnect");
+            status.message = string("mux not enabled - unable to connect/disconnect");
             return status;
         }
 
@@ -617,7 +619,7 @@ namespace ps
         jsonDat.set(ConnectedKey,multiplexer_.isConnectedCtr());
 #else
         status.success = false;
-        status.message = String("multiplexer hardware not supported");
+        status.message = string("multiplexer hardware not supported");
 #endif
         return status;
     }
@@ -636,7 +638,7 @@ namespace ps
         }
 #else
         status.success = false;
-        status.message = String("multiplexer hardware not supported");
+        status.message = string("multiplexer hardware not supported");
 #endif
         return status;
     }
@@ -648,21 +650,21 @@ namespace ps
         if (!jsonMsg.containsKey(ConnectedKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + ConnectedKey;
+            status.message = string("json does not contain key: ") + ConnectedKey;
             return status;
         }
 
         if (!multiplexer_.isRunning())
         {
             status.success = false;
-            status.message = String("mux not enabled - unable to connect/disconnect");
+            status.message = string("mux not enabled - unable to connect/disconnect");
             return status;
         }
 
         if ((!(jsonMsg[ConnectedKey].is<bool>())) && (!jsonMsg[ConnectedKey].is<int>()))
         {
             status.success = false;
-            status.message = ConnectedKey + String(" must be bool or int");
+            status.message = ConnectedKey + string(" must be bool or int");
             return status;
         }
 
@@ -676,7 +678,7 @@ namespace ps
             else
             {
                 status.success = false;
-                status.message = String("if bool '") + ConnectedKey + String("' must be false");
+                status.message = string("if bool '") + ConnectedKey + string("' must be false");
                 return status;
             }
         }
@@ -686,14 +688,14 @@ namespace ps
             if ((electNum <= 0) && (electNum > NumMuxChan))
             {
                 status.success = false;
-                status.message = String("mux channel out of range");
+                status.message = string("mux channel out of range");
                 return status;
             }
 
             if (!multiplexer_.isWrkElectEnabled(electNum))
             {
                 status.success = false;
-                status.message = String("mux channel is not enabled");
+                status.message = string("mux channel is not enabled");
                 return status;
             }
 
@@ -702,7 +704,7 @@ namespace ps
         }
 #else
         status.success = false;
-        status.message = String("multiplexer hardware not supported");
+        status.message = string("multiplexer hardware not supported");
 #endif
         return status;
     }
@@ -721,7 +723,7 @@ namespace ps
         }
 #else
         status.success = false;
-        status.message = String("multiplexer hardware not supported");
+        status.message = string("multiplexer hardware not supported");
 #endif
         return status;
     }
@@ -738,7 +740,7 @@ namespace ps
         }
 #else
         status.success = false;
-        status.message = String("multiplexer hardware not supported");
+        status.message = string("multiplexer hardware not supported");
 #endif
         return status;
     }
@@ -750,14 +752,14 @@ namespace ps
         if (!jsonMsg.containsKey(ConnectedKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + ConnectedKey;
+            status.message = string("json does not contain key: ") + ConnectedKey;
             return status;
         }
 
         if ( !(jsonMsg[ConnectedKey].is<bool>()) )
         {
             status.success = false;
-            status.message = String("unable to convert '") + ConnectedKey + String("' to bool");
+            status.message = string("unable to convert '") + ConnectedKey + string("' to bool");
             return status;
         }
 
@@ -791,14 +793,14 @@ namespace ps
         if (!jsonMsg.containsKey(ConnectedKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + ConnectedKey;
+            status.message = string("json does not contain key: ") + ConnectedKey;
             return status;
         }
 
         if ( !(jsonMsg[ConnectedKey].is<bool>()) )
         {
             status.success = false;
-            status.message = String("unable to convert '") + ConnectedKey + String("' to bool");
+            status.message = string("unable to convert '") + ConnectedKey + string("' to bool");
             return status;
         }
 
@@ -832,14 +834,14 @@ namespace ps
         if (!jsonMsg.containsKey(ConnectedKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + ConnectedKey;
+            status.message = string("json does not contain key: ") + ConnectedKey;
             return status;
         }
 
         if ( !(jsonMsg[ConnectedKey].is<bool>()) )
         {
             status.success = false;
-            status.message = String("unable to convert '") + ConnectedKey + String("' to bool");
+            status.message = string("unable to convert '") + ConnectedKey + string("' to bool");
             return status;
         }
 
@@ -874,14 +876,14 @@ namespace ps
         if (!jsonMsg.containsKey(ConnectedKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + ConnectedKey;
+            status.message = string("json does not contain key: ") + ConnectedKey;
             return status;
         }
 
         if ( !(jsonMsg[ConnectedKey].is<bool>()) )
         {
             status.success = false;
-            status.message = String("unable to convert '") + ConnectedKey + String("' to bool");
+            status.message = string("unable to convert '") + ConnectedKey + string("' to bool");
             return status;
         }
 
@@ -915,14 +917,14 @@ namespace ps
         if (!jsonMsg.containsKey(ElectAutoConnectKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + ElectAutoConnectKey;
+            status.message = string("json does not contain key: ") + ElectAutoConnectKey;
             return status;
         }
 
         if ( !(jsonMsg[ElectAutoConnectKey].is<bool>()) )
         {
             status.success = false;
-            status.message = String("unable to convert '") + ElectAutoConnectKey + String("' to bool");
+            status.message = string("unable to convert '") + ElectAutoConnectKey + string("' to bool");
             return status;
         }
 
@@ -956,11 +958,11 @@ namespace ps
         if (!jsonMsg.containsKey(VoltRangeKey))
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + VoltRangeKey;
+            status.message = string("json does not contain key: ") + VoltRangeKey;
         }
         else
         {
-            String voltRangeName = String((const char *)(jsonMsg[VoltRangeKey]));
+            string voltRangeName = string((const char *)(jsonMsg[VoltRangeKey]));
             status = analogSubsystem_.setRefElectVoltRangeByName(voltRangeName);
             jsonDat.set(VoltRangeKey,analogSubsystem_.getRefElectVoltRangeName());
         }
@@ -1004,7 +1006,7 @@ namespace ps
             StaticJsonBuffer<JsonMessageBufferSize> messageJsonBuffer;
             StaticJsonBuffer<JsonMessageBufferSize> commandRespJsonBuffer;
 
-            String message = messageReceiver_.next();
+            string message = messageReceiver_.next();
             JsonObject &jsonMsg = messageParser_.parse(message,messageJsonBuffer);
 
             JsonObject &jsonDat = commandRespJsonBuffer.createObject();
@@ -1034,9 +1036,9 @@ namespace ps
         // Empty data buffer
         size_t buffer_size;
         { // Begin atomic block
-            noInterrupts();
+        	__disable_irq();
             buffer_size = dataBuffer_.size();
-            interrupts();
+            __enable_irq();
             
         } // End atomic block
 
@@ -1044,11 +1046,11 @@ namespace ps
         {
             Sample sample;
             { // Begin atomic block
-                noInterrupts();
+            	__disable_irq();
                 sample = dataBuffer_.front();
                 dataBuffer_.pop_front();
                 buffer_size = dataBuffer_.size();
-                interrupts();
+                __enable_irq();
             } // End atomic block
             messageSender_.sendSample(sample);
         }
@@ -1188,7 +1190,7 @@ namespace ps
 #if defined DEVBOARD_TEENSY
             testTimer_.begin(testTimerCallback_, TestTimerPeriod);
 #elif defined DEVBOARD_ITSY_BITSY
-            TC.startTimer(TestTimerPeriod, testTimerCallback_);
+            //TC.startTimer(TestTimerPeriod, testTimerCallback_);
 #endif
 
         }
@@ -1200,7 +1202,7 @@ namespace ps
 #if defined DEVBOARD_TEENSY
         testTimer_.end();
 #elif defined DEVBOARD_ITSY_BITSY
-        TC.stopTimer();
+        //TC.stopTimer();
 #endif
         testInProgress_ = false;
         lastSampleFlag_ = true;

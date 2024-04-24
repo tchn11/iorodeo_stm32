@@ -2,6 +2,8 @@
 #include "ps_time_utils.h"
 #include "ps_constants.h"
 #include <math.h>
+#include "string"
+using namespace std;
 
 namespace ps 
 {
@@ -75,8 +77,8 @@ namespace ps
     void SquareWaveTest::setWindow(float value)
     {
         window_ = fabs(value);
-        window_ = max(0.0, window_);
-        window_ = min(1.0, window_);
+        window_ = max(0.0f, window_);
+        window_ = min(1.0f, window_);
         updateWindowLenUs();
     }
 
@@ -346,7 +348,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = StartValueKey + String(" not a float");
+                string errorMsg = StartValueKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -370,7 +372,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = FinalValueKey + String(" not a float");
+                string errorMsg = FinalValueKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -393,7 +395,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = StepValueKey + String(" not a float");
+                string errorMsg = StepValueKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -417,7 +419,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = AmplitudeKey + String(" not a float");
+                string errorMsg = AmplitudeKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -440,7 +442,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = WindowKey + String(" not a float");
+                string errorMsg = WindowKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }

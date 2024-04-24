@@ -1,0 +1,105 @@
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\arm-none-eabi\include\c++\11.3.1\arm-none-eabi\thumb\v7e-m+fp\hard\bits\gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	1
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/cmath:165:3:constexpr float std::ceil(float)	1
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/cmath:241:3:constexpr float std::fabs(float)	1
+../Core/Inc/ps_return_status.h:16:13:ps::ReturnStatus::ReturnStatus()	1
+../Core/Inc/ArduinoJson.h:1544:3:ArduinoJson::JsonVariant::JsonVariant()	1
+../Core/Inc/ArduinoJson.h:2098:9:static void* ArduinoJson::Internals::JsonBufferAllocated::operator new(size_t, ArduinoJson::JsonBuffer*)	2
+../Core/Inc/ArduinoJson.h:3074:13:bool ArduinoJson::Internals::isdigit(char)	3
+../Core/Inc/ArduinoJson.h:3077:13:bool ArduinoJson::Internals::issign(char)	3
+../Core/Inc/ArduinoJson.h:3084:13:bool ArduinoJson::Internals::isFloat(const char*)	14
+../Core/Inc/ArduinoJson.h:3107:13:bool ArduinoJson::Internals::isInteger(const char*)	4
+../Core/Inc/ArduinoJson.h:3285:13:bool ArduinoJson::JsonVariant::variantIsInteger() const	5
+../Core/Inc/ArduinoJson.h:3290:13:bool ArduinoJson::JsonVariant::variantIsFloat() const	6
+../Core/Src/ps_squarewave_test.cpp:12:5:ps::SquareWaveTest::SquareWaveTest()	1
+../Core/Src/ps_squarewave_test.cpp:22:10:void ps::SquareWaveTest::setStartValue(float)	1
+../Core/Src/ps_squarewave_test.cpp:31:11:float ps::SquareWaveTest::getStartValue()	1
+../Core/Src/ps_squarewave_test.cpp:37:10:void ps::SquareWaveTest::setFinalValue(float)	1
+../Core/Src/ps_squarewave_test.cpp:46:11:float ps::SquareWaveTest::getFinalValue()	1
+../Core/Src/ps_squarewave_test.cpp:52:10:void ps::SquareWaveTest::setStepValue(float)	1
+../Core/Src/ps_squarewave_test.cpp:59:11:float ps::SquareWaveTest::getStepValue()	1
+../Core/Src/ps_squarewave_test.cpp:65:10:void ps::SquareWaveTest::setAmplitude(float)	1
+../Core/Src/ps_squarewave_test.cpp:71:11:float ps::SquareWaveTest::getAmplitude()	1
+../Core/Src/ps_squarewave_test.cpp:77:10:void ps::SquareWaveTest::setWindow(float)	1
+../Core/Src/ps_squarewave_test.cpp:86:11:float ps::SquareWaveTest::getWindow()	1
+../Core/Src/ps_squarewave_test.cpp:92:11:virtual float ps::SquareWaveTest::getMaxValue() const	1
+../Core/Src/ps_squarewave_test.cpp:99:11:virtual float ps::SquareWaveTest::getMinValue() const	1
+../Core/Src/ps_squarewave_test.cpp:106:10:virtual void ps::SquareWaveTest::setSamplePeriod(uint64_t)	1
+../Core/Src/ps_squarewave_test.cpp:114:10:virtual bool ps::SquareWaveTest::isDone(uint64_t) const	2
+../Core/Src/ps_squarewave_test.cpp:127:14:virtual uint64_t ps::SquareWaveTest::getDoneTime() const	1
+../Core/Src/ps_squarewave_test.cpp:133:10:virtual void ps::SquareWaveTest::reset()	1
+../Core/Src/ps_squarewave_test.cpp:144:11:virtual float ps::SquareWaveTest::getValue(uint64_t) const	3
+../Core/Src/ps_squarewave_test.cpp:168:11:virtual float ps::SquareWaveTest::getStairValue(uint64_t) const	2
+../Core/Src/ps_squarewave_test.cpp:187:10:virtual bool ps::SquareWaveTest::updateSample(ps::Sample, ps::Sample&)	10
+../Core/Inc/ps_return_status.h:11:11:ps::ReturnStatus::~ReturnStatus()	1
+../Core/Src/ps_squarewave_test.cpp:250:10:virtual void ps::SquareWaveTest::getParam(ArduinoJson::JsonObject&)	2
+../Core/Inc/ps_return_status.h:11:11:ps::ReturnStatus& ps::ReturnStatus::operator=(ps::ReturnStatus&&)	1
+../Core/Src/ps_squarewave_test.cpp:268:18:virtual ps::ReturnStatus ps::SquareWaveTest::setParam(ArduinoJson::JsonObject&, ArduinoJson::JsonObject&)	3
+../Core/Src/ps_squarewave_test.cpp:298:10:void ps::SquareWaveTest::updateDoneTime()	2
+../Core/Src/ps_squarewave_test.cpp:313:10:void ps::SquareWaveTest::updateMaxMinValues()	1
+../Core/Src/ps_squarewave_test.cpp:320:10:void ps::SquareWaveTest::updateWindowLenUs()	1
+../Core/Src/ps_squarewave_test.cpp:328:10:void ps::SquareWaveTest::updateStepSign()	2
+../Core/Src/ps_squarewave_test.cpp:334:10:void ps::SquareWaveTest::setStartValueFromJson(ArduinoJson::JsonObject&, ArduinoJson::JsonObject&, ps::ReturnStatus&)	4
+../Core/Src/ps_squarewave_test.cpp:358:10:void ps::SquareWaveTest::setFinalValueFromJson(ArduinoJson::JsonObject&, ArduinoJson::JsonObject&, ps::ReturnStatus&)	4
+../Core/Src/ps_squarewave_test.cpp:381:10:void ps::SquareWaveTest::setStepValueFromJson(ArduinoJson::JsonObject&, ArduinoJson::JsonObject&, ps::ReturnStatus&)	4
+../Core/Src/ps_squarewave_test.cpp:405:10:void ps::SquareWaveTest::setAmplitudeFromJson(ArduinoJson::JsonObject&, ArduinoJson::JsonObject&, ps::ReturnStatus&)	4
+../Core/Src/ps_squarewave_test.cpp:428:10:void ps::SquareWaveTest::setWindowFromJson(ArduinoJson::JsonObject&, ArduinoJson::JsonObject&, ps::ReturnStatus&)	4
+../Core/Inc/ArduinoJson.h:1551:3:ArduinoJson::JsonVariant::JsonVariant(T, typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::IsFloatingPoint<T>::value>::type*) [with T = float]	1
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_algobase.h:254:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	2
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_algobase.h:230:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = float]	2
+../Core/Inc/ArduinoJson.h:2477:8:bool ArduinoJson::JsonObject::set(const TString&, const TValue&) [with TValue = float; TString = std::__cxx11::basic_string<char>]	1
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_algobase.h:230:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = long long unsigned int]	2
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_algobase.h:254:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long long unsigned int]	2
+../Core/Inc/ArduinoJson.h:2541:8:bool ArduinoJson::JsonObject::containsKey(const TString&) const [with TString = std::__cxx11::basic_string<char>]	1
+../Core/Inc/ArduinoJson.h:2456:50:ArduinoJson::Internals::JsonObjectSubscript<const TString&> ArduinoJson::JsonObject::operator[](const TString&) [with TString = std::__cxx11::basic_string<char>]	1
+../Core/Inc/ArduinoJson.h:2508:51:typename ArduinoJson::Internals::JsonVariantAs<T>::type ArduinoJson::JsonObject::get(const TString&) const [with TValue = float; TString = std::__cxx11::basic_string<char>]	1
+../Core/Inc/ArduinoJson.h:2508:51:typename ArduinoJson::Internals::JsonVariantAs<T>::type ArduinoJson::JsonObject::get(const TString&) const [with TValue = long int; TString = std::__cxx11::basic_string<char>]	1
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/basic_string.h:6166:5:std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]	1
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/move.h:104:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&&) [with _Tp = std::__cxx11::basic_string<char>&]	1
+../Core/Inc/ArduinoJson.h:2582:8:bool ArduinoJson::JsonObject::set_impl(TStringRef, TValueRef) [with TStringRef = const std::__cxx11::basic_string<char>&; TValueRef = const float&]	5
+../Core/Inc/ArduinoJson.h:2571:18:ArduinoJson::Internals::List<ArduinoJson::JsonPair>::const_iterator ArduinoJson::JsonObject::findKey(TStringRef) const [with TStringRef = const std::__cxx11::basic_string<char>&]	1
+../Core/Inc/ArduinoJson.h:2228:18:ArduinoJson::Internals::List<T>::const_iterator ArduinoJson::Internals::List<T>::end() const [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:2131:8:bool ArduinoJson::Internals::ListConstIterator<T>::operator!=(const ArduinoJson::Internals::ListConstIterator<T>&) const [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:2517:8:bool ArduinoJson::JsonObject::is(const TString&) const [with TValue = float; TString = std::__cxx11::basic_string<char>]	1
+../Core/Inc/ArduinoJson.h:2575:51:typename ArduinoJson::Internals::JsonVariantAs<TValue>::type ArduinoJson::JsonObject::get_impl(TStringRef) const [with TStringRef = const std::__cxx11::basic_string<char>&; TValue = float]	2
+../Core/Inc/ArduinoJson.h:2517:8:bool ArduinoJson::JsonObject::is(const TString&) const [with TValue = long int; TString = std::__cxx11::basic_string<char>]	1
+../Core/Inc/ArduinoJson.h:2575:51:typename ArduinoJson::Internals::JsonVariantAs<TValue>::type ArduinoJson::JsonObject::get_impl(TStringRef) const [with TStringRef = const std::__cxx11::basic_string<char>&; TValue = long int]	2
+../Core/Inc/ArduinoJson.h:548:15:static bool ArduinoJson::Internals::StdStringTraits<TString>::is_null(const TString&) [with TString = std::__cxx11::basic_string<char>]	1
+../Core/Inc/ArduinoJson.h:2563:12:ArduinoJson::Internals::List<ArduinoJson::JsonPair>::iterator ArduinoJson::JsonObject::findKey(TStringRef) [with TStringRef = const std::__cxx11::basic_string<char>&]	3
+../Core/Inc/ArduinoJson.h:2165:8:bool ArduinoJson::Internals::ListIterator<T>::operator==(const ArduinoJson::Internals::ListIterator<T>&) const [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:2222:12:ArduinoJson::Internals::List<T>::iterator ArduinoJson::Internals::List<T>::end() [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:2208:12:ArduinoJson::Internals::List<T>::iterator ArduinoJson::Internals::List<T>::add() [with T = ArduinoJson::JsonPair]	4
+../Core/Inc/ArduinoJson.h:2162:6:T* ArduinoJson::Internals::ListIterator<T>::operator->() [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:2275:15:static bool ArduinoJson::Internals::ValueSaver<Source, typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::StringTraits<TString>::should_duplicate>::type>::save(ArduinoJson::JsonBuffer*, Destination&, Source) [with Destination = const char*; Source = const std::__cxx11::basic_string<char>&]	3
+../Core/Inc/ArduinoJson.h:2266:15:static bool ArduinoJson::Internals::ValueSaver<Source, Enable>::save(ArduinoJson::JsonBuffer*, Destination&, Source) [with Destination = ArduinoJson::JsonVariant; Source = const float&; Enable = void]	1
+../Core/Inc/ArduinoJson.h:2182:3:ArduinoJson::Internals::ListIterator<T>::operator ArduinoJson::Internals::ListConstIterator<T>() const [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:2121:12:ArduinoJson::Internals::ListConstIterator<T>::ListConstIterator(const ArduinoJson::Internals::ListNode<T>*) [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:2595:8:bool ArduinoJson::JsonObject::is_impl(TStringRef) const [with TStringRef = const std::__cxx11::basic_string<char>&; TValue = float]	2
+../Core/Inc/ArduinoJson.h:2125:12:const T* ArduinoJson::Internals::ListConstIterator<T>::operator->() [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:1616:3:const typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::IsFloatingPoint<T>::value, T>::type ArduinoJson::JsonVariant::as() const [with T = float]	1
+../Core/Inc/ArduinoJson.h:163:12:static T ArduinoJson::Internals::JsonVariantDefault<T>::get() [with T = float]	1
+../Core/Inc/ArduinoJson.h:2595:8:bool ArduinoJson::JsonObject::is_impl(TStringRef) const [with TStringRef = const std::__cxx11::basic_string<char>&; TValue = long int]	2
+../Core/Inc/ArduinoJson.h:1605:3:const typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::IsIntegral<T>::value, Integer>::type ArduinoJson::JsonVariant::as() const [with T = long int]	1
+../Core/Inc/ArduinoJson.h:163:12:static T ArduinoJson::Internals::JsonVariantDefault<T>::get() [with T = long int]	1
+../Core/Inc/ArduinoJson.h:2158:12:ArduinoJson::Internals::ListIterator<T>::ListIterator(ArduinoJson::Internals::ListNode<T>*) [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:2219:12:ArduinoJson::Internals::List<T>::iterator ArduinoJson::Internals::List<T>::begin() [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:2168:8:bool ArduinoJson::Internals::ListIterator<T>::operator!=(const ArduinoJson::Internals::ListIterator<T>&) const [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:2171:20:ArduinoJson::Internals::ListIterator<T>& ArduinoJson::Internals::ListIterator<T>::operator++() [with T = ArduinoJson::JsonPair]	2
+../Core/Inc/ArduinoJson.h:554:15:static bool ArduinoJson::Internals::StdStringTraits<TString>::equals(const TString&, const char*) [with TString = std::__cxx11::basic_string<char>]	3
+../Core/Inc/ArduinoJson.h:2433:8:ArduinoJson::JsonPair::JsonPair()	1
+../Core/Inc/ArduinoJson.h:2110:3:ArduinoJson::Internals::ListNode<T>::ListNode() [with T = ArduinoJson::JsonPair]	1
+../Core/Inc/ArduinoJson.h:541:22:static const char* ArduinoJson::Internals::StdStringTraits<TString>::duplicate(const TString&, Buffer*) [with Buffer = ArduinoJson::JsonBuffer; TString = std::__cxx11::basic_string<char>]	3
+../Core/Inc/ArduinoJson.h:1680:3:typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::IsFloatingPoint<T>::value, bool>::type ArduinoJson::JsonVariant::is() const [with T = float]	1
+../Core/Inc/ArduinoJson.h:3261:10:T ArduinoJson::JsonVariant::variantAsFloat() const [with T = float]	5
+../Core/Inc/ArduinoJson.h:1674:77:typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::IsIntegral<T>::value, bool>::type ArduinoJson::JsonVariant::is() const [with T = long int]	1
+../Core/Inc/ArduinoJson.h:3235:10:T ArduinoJson::JsonVariant::variantAsInteger() const [with T = long int]	5
+../Core/Inc/ArduinoJson.h:3118:10:T ArduinoJson::Internals::parseFloat(const char*) [with T = float]	26
+../Core/Inc/ArduinoJson.h:3187:3:T ArduinoJson::Internals::parseInteger(const char*) [with T = long int]	7
+../Core/Inc/ArduinoJson.h:1052:12:static T ArduinoJson::Internals::FloatTraits<T, 4>::nan() [with T = float]	1
+../Core/Inc/ArduinoJson.h:1055:12:static T ArduinoJson::Internals::FloatTraits<T, 4>::inf() [with T = float]	1
+../Core/Inc/ArduinoJson.h:1017:12:static T ArduinoJson::Internals::FloatTraits<T, 4>::make_float(T, TExponent) [with TExponent = int; T = float]	6
+../Core/Inc/ArduinoJson.h:1044:12:static T ArduinoJson::Internals::FloatTraits<T, 4>::forge(uint32_t) [with T = float]	1
+../Core/Inc/ArduinoJson.h:1032:12:static T ArduinoJson::Internals::FloatTraits<T, 4>::positiveBinaryPowerOfTen(int) [with T = float]	1
+../Core/Inc/ArduinoJson.h:1036:12:static T ArduinoJson::Internals::FloatTraits<T, 4>::negativeBinaryPowerOfTen(int) [with T = float]	1
+../Core/Src/ps_squarewave_test.cpp:451:1:void __static_initialization_and_destruction_0(int, int)	7
+../Core/Src/ps_squarewave_test.cpp:451:1:cpp)	1
+../Core/Src/ps_squarewave_test.cpp:451:1:cpp)	1

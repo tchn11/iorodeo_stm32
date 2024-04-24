@@ -15,8 +15,11 @@
         #include <WProgram.h>
     #endif
 #else
-    #include <cstddef>
+    //#include <cstddef>
 #endif
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 template <typename T, size_t MAX_SIZE>
 class Array
@@ -59,7 +62,7 @@ private:
   size_t size_;
 };
 
-template <typename T, size_t MAX_SIZE>
+/*template <typename T, size_t MAX_SIZE>
 inline Print & operator <<(Print & stream, Array<T,MAX_SIZE> & array)
 {
   stream.print("[");
@@ -73,7 +76,7 @@ inline Print & operator <<(Print & stream, Array<T,MAX_SIZE> & array)
   }
   stream.print("]");
   return stream;
-}
+}*/
 
 #include "ArrayDefinitions.h"
 

@@ -2,6 +2,8 @@
 #define PS_PIN_MAP_H
 
 #include "ps_hardware_defs.h"
+#include "main.h"
+#include "string.h"
 
 namespace ps
 {
@@ -27,7 +29,7 @@ namespace ps
     const int SW_REF_ELECT = 8;
     const int SW_WRK_ELECT = 9;
 #elif defined (HARDWARE_VERSION_0P2) && defined (DEVBOARD_ITSY_BITSY)
-#define ANALOG_SPI SPI2
+#define ANALOG_SPI &hspi2
 #define REF_ELECT_UNI_cs_pin GPIO_PIN_7
 #define REF_ELECT_UNI_cs_GPIO_Port GPIOA
 #define REF_ELECT_UNI_rd_pin GPIO_PIN_7

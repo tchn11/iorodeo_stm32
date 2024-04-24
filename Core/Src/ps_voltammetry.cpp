@@ -1,10 +1,12 @@
 #include "ps_voltammetry.h"
 #include "ps_time_utils.h"
+#include "string"
+using namespace std;
 
 namespace ps
 {
 
-    const String Voltammetry::TestKey("test");
+    const string Voltammetry::TestKey("test");
 
     Voltammetry::Voltammetry()
     {
@@ -21,14 +23,14 @@ namespace ps
     }
             
 
-    BaseTest *Voltammetry::getTest(String name)
+    BaseTest *Voltammetry::getTest(string name)
     {
         BaseTest *testPtr = nullptr;
         for (size_t i=0; i<availableTests_.size(); i++)
         {
-            String currName = availableTests_[i] -> getName();
-            currName.trim();
-            if (name.equals(currName))
+            string currName = availableTests_[i] -> getName();
+            //currName.trim();
+            if (name.compare(currName))
             {
                 testPtr = availableTests_[i];
                 break;
@@ -43,19 +45,19 @@ namespace ps
         ReturnStatus status;
         if (jsonMsg.containsKey(TestKey))
         {
-            String testName = String((const char *)(jsonMsg[TestKey]));
+            string testName = string((const char *)(jsonMsg[TestKey]));
             jsonDat.set(TestKey,jsonMsg[TestKey]);
             testPtr = getTest(testName);
             if (testPtr == nullptr)
             {
                 status.success = false;
-                status.message = String("test not found"); 
+                status.message = string("test not found");
             }
         }
         else
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + TestKey;
+            status.message = string("json does not contain key: ") + TestKey;
         }
         return status;
     }
@@ -77,7 +79,7 @@ namespace ps
         else
         {
             status.success = false;
-            status.message = String("json does not contain key: ") + TestKey;
+            status.message = string("json does not contain key: ") + TestKey;
         }
         return status;
     }
@@ -98,13 +100,13 @@ namespace ps
             else
             {
                 status.success = false;
-                status.message = String("test not found");
+                status.message = string("test not found");
             }
         }
         else
         {
             status.success = false;
-            status.message = TestKey + String(" key not found");
+            status.message = TestKey + string(" key not found");
         }
         return status;
     } 
@@ -117,7 +119,7 @@ namespace ps
         if (!jsonMsg.containsKey(TestKey))
         {
             status.success = false;
-            status.message = TestKey + String(" key not found");
+            status.message = TestKey + string(" key not found");
             return status;
         }
 
@@ -126,11 +128,11 @@ namespace ps
         if ((!status.success) || (testPtr == nullptr))
         {
             status.success = false;
-            status.message = String("test not found");
+            status.message = string("test not found");
             return status;
         }
 
-        String testName = testPtr -> getName();
+        string testName = testPtr -> getName();
         uint64_t doneTimeUs = testPtr -> getDoneTime();
         uint32_t doneTimeMs = convertUsToMs(doneTimeUs);
 

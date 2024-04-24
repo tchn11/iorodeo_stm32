@@ -12,6 +12,9 @@
 #include "ps_squarewave_test.h"
 #include "ArduinoJson.h"
 #include "Array.h"
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 namespace ps
 {
@@ -23,7 +26,7 @@ namespace ps
 
             Voltammetry();
 
-            BaseTest *getTest(String name);
+            BaseTest *getTest(string name);
             ReturnStatus getTest(JsonObject &jsonMsg, JsonObject &jsonDat, BaseTest* &testPtr);
             ReturnStatus getParam(JsonObject &jsonMsg, JsonObject &jsonDat);
             ReturnStatus setParam(JsonObject &jsonMsg, JsonObject &jsonDat);
@@ -42,7 +45,7 @@ namespace ps
             MultiStepTest<2> chronoampTest;
             MultiStepTest<MultiStepMaxSize> multiStepTest;
 
-            static const String TestKey;
+            static const string TestKey;
 
         protected:
 

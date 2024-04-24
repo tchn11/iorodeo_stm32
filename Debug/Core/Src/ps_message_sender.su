@@ -1,0 +1,68 @@
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\arm-none-eabi\include\c++\11.3.1\arm-none-eabi\thumb\v7e-m+fp\hard\bits\gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+../Core/Inc/ArduinoJson.h:20:3:ArduinoJson::Internals::NonCopyable::NonCopyable()	16	static
+../Core/Inc/ArduinoJson.h:1544:3:ArduinoJson::JsonVariant::JsonVariant()	16	static
+../Core/Inc/ArduinoJson.h:1545:3:ArduinoJson::JsonVariant::JsonVariant(bool)	16	static
+../Core/Inc/ArduinoJson.h:1786:3:ArduinoJson::JsonBuffer::~JsonBuffer()	16	static
+../Core/Inc/ArduinoJson.h:2098:9:static void* ArduinoJson::Internals::JsonBufferAllocated::operator new(size_t, ArduinoJson::JsonBuffer*)	16	static
+../Core/Inc/ArduinoJson.h:2453:12:ArduinoJson::JsonObject::JsonObject(ArduinoJson::JsonBuffer*)	16	static
+../Core/Inc/ArduinoJson.h:2557:22:static ArduinoJson::JsonObject& ArduinoJson::JsonObject::invalid()	8	static
+../Core/Inc/ArduinoJson.h:1769:7:ArduinoJson::JsonBuffer::JsonBuffer()	16	static
+../Core/Inc/ArduinoJson.h:1900:7:ArduinoJson::Internals::JsonBufferBase<ArduinoJson::Internals::StaticJsonBufferBase>::JsonBufferBase()	16	static
+../Core/Inc/ArduinoJson.h:2641:3:ArduinoJson::Internals::StaticJsonBufferBase::StaticJsonBufferBase(char*, size_t)	24	static
+../Core/Inc/ArduinoJson.h:2649:17:virtual void* ArduinoJson::Internals::StaticJsonBufferBase::alloc(size_t)	16	static
+../Core/Inc/ArduinoJson.h:2661:3:ArduinoJson::Internals::StaticJsonBufferBase::~StaticJsonBufferBase()	16	static
+../Core/Inc/ArduinoJson.h:2663:8:void ArduinoJson::Internals::StaticJsonBufferBase::alignNextAlloc()	24	static
+../Core/Inc/ArduinoJson.h:2666:8:bool ArduinoJson::Internals::StaticJsonBufferBase::canAlloc(size_t) const	16	static
+../Core/Inc/ArduinoJson.h:2669:9:void* ArduinoJson::Internals::StaticJsonBufferBase::doAlloc(size_t)	24	static
+../Core/Inc/ArduinoJson.h:2983:33:ArduinoJson::JsonObject& ArduinoJson::JsonBuffer::createObject()	32	static
+../Core/Inc/ArduinoJson.h:3218:8:ArduinoJson::JsonVariant::JsonVariant(const ArduinoJson::JsonObject&)	16	static
+../Core/Inc/ps_time_utils.h:7:21:uint32_t ps::convertUsToMs(uint64_t)	16	static
+../Core/Src/ps_message_sender.cpp:7:5:ps::MessageSender::MessageSender()	16	static
+../Core/Inc/ArduinoJson.h:2689:7:ArduinoJson::StaticJsonBuffer<4000>::~StaticJsonBuffer()	16	static
+../Core/Src/ps_message_sender.cpp:10:10:void ps::MessageSender::sendCommandResponse(ps::ReturnStatus, ArduinoJson::JsonObject&)	4048	static
+../Core/Src/ps_message_sender.cpp:24:10:void ps::MessageSender::sendSample(ps::Sample)	4040	static
+../Core/Src/ps_message_sender.cpp:39:10:void ps::MessageSender::sendSampleEnd()	4040	static
+../Core/Inc/ArduinoJson.h:1551:3:ArduinoJson::JsonVariant::JsonVariant(T, typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::IsFloatingPoint<T>::value>::type*) [with T = float]	24	static
+../Core/Inc/ArduinoJson.h:2199:12:ArduinoJson::Internals::List<T>::List(ArduinoJson::JsonBuffer*) [with T = ArduinoJson::JsonPair]	16	static
+../Core/Inc/ArduinoJson.h:1954:3:ArduinoJson::Internals::JsonBufferBase<TDerived>::~JsonBufferBase() [with TDerived = ArduinoJson::Internals::StaticJsonBufferBase]	16	static
+../Core/Inc/ArduinoJson.h:2200:8:bool ArduinoJson::Internals::List<T>::success() const [with T = ArduinoJson::JsonPair]	16	static
+../Core/Inc/ArduinoJson.h:2691:12:ArduinoJson::StaticJsonBuffer<CAPACITY>::StaticJsonBuffer() [with unsigned int CAPACITY = 4000]	16	static
+../Core/Inc/ArduinoJson.h:2477:8:bool ArduinoJson::JsonObject::set(const TString&, const TValue&) [with TValue = bool; TString = std::__cxx11::basic_string<char>]	24	static
+../Core/Inc/ArduinoJson.h:2477:8:bool ArduinoJson::JsonObject::set(const TString&, const TValue&) [with TValue = std::__cxx11::basic_string<char>; TString = std::__cxx11::basic_string<char>]	24	static
+../Core/Inc/ArduinoJson.h:2477:8:bool ArduinoJson::JsonObject::set(const TString&, const TValue&) [with TValue = ArduinoJson::JsonObject; TString = std::__cxx11::basic_string<char>]	24	static
+../Core/Inc/ArduinoJson.h:2477:8:bool ArduinoJson::JsonObject::set(const TString&, const TValue&) [with TValue = long unsigned int; TString = std::__cxx11::basic_string<char>]	24	static
+../Core/Inc/ArduinoJson.h:2477:8:bool ArduinoJson::JsonObject::set(const TString&, const TValue&) [with TValue = float; TString = std::__cxx11::basic_string<char>]	24	static
+../Core/Inc/ArduinoJson.h:2477:8:bool ArduinoJson::JsonObject::set(const TString&, const TValue&) [with TValue = unsigned char; TString = std::__cxx11::basic_string<char>]	24	static
+../Core/Inc/ArduinoJson.h:2582:8:bool ArduinoJson::JsonObject::set_impl(TStringRef, TValueRef) [with TStringRef = const std::__cxx11::basic_string<char>&; TValueRef = const bool&]	48	static
+../Core/Inc/ArduinoJson.h:2582:8:bool ArduinoJson::JsonObject::set_impl(TStringRef, TValueRef) [with TStringRef = const std::__cxx11::basic_string<char>&; TValueRef = const std::__cxx11::basic_string<char>&]	48	static
+../Core/Inc/ArduinoJson.h:2582:8:bool ArduinoJson::JsonObject::set_impl(TStringRef, TValueRef) [with TStringRef = const std::__cxx11::basic_string<char>&; TValueRef = const ArduinoJson::JsonObject&]	48	static
+../Core/Inc/ArduinoJson.h:2582:8:bool ArduinoJson::JsonObject::set_impl(TStringRef, TValueRef) [with TStringRef = const std::__cxx11::basic_string<char>&; TValueRef = const long unsigned int&]	48	static
+../Core/Inc/ArduinoJson.h:2582:8:bool ArduinoJson::JsonObject::set_impl(TStringRef, TValueRef) [with TStringRef = const std::__cxx11::basic_string<char>&; TValueRef = const float&]	48	static
+../Core/Inc/ArduinoJson.h:2582:8:bool ArduinoJson::JsonObject::set_impl(TStringRef, TValueRef) [with TStringRef = const std::__cxx11::basic_string<char>&; TValueRef = const unsigned char&]	48	static
+../Core/Inc/ArduinoJson.h:2266:15:static bool ArduinoJson::Internals::ValueSaver<Source, Enable>::save(ArduinoJson::JsonBuffer*, Destination&, Source) [with Destination = ArduinoJson::JsonVariant; Source = const ArduinoJson::JsonObject&; Enable = void]	48	static
+../Core/Inc/ArduinoJson.h:548:15:static bool ArduinoJson::Internals::StdStringTraits<TString>::is_null(const TString&) [with TString = std::__cxx11::basic_string<char>]	16	static
+../Core/Inc/ArduinoJson.h:2563:12:ArduinoJson::Internals::List<ArduinoJson::JsonPair>::iterator ArduinoJson::JsonObject::findKey(TStringRef) [with TStringRef = const std::__cxx11::basic_string<char>&]	24	static
+../Core/Inc/ArduinoJson.h:2165:8:bool ArduinoJson::Internals::ListIterator<T>::operator==(const ArduinoJson::Internals::ListIterator<T>&) const [with T = ArduinoJson::JsonPair]	16	static
+../Core/Inc/ArduinoJson.h:2222:12:ArduinoJson::Internals::List<T>::iterator ArduinoJson::Internals::List<T>::end() [with T = ArduinoJson::JsonPair]	24	static
+../Core/Inc/ArduinoJson.h:2208:12:ArduinoJson::Internals::List<T>::iterator ArduinoJson::Internals::List<T>::add() [with T = ArduinoJson::JsonPair]	40	static
+../Core/Inc/ArduinoJson.h:2162:6:T* ArduinoJson::Internals::ListIterator<T>::operator->() [with T = ArduinoJson::JsonPair]	16	static
+../Core/Inc/ArduinoJson.h:2275:15:static bool ArduinoJson::Internals::ValueSaver<Source, typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::StringTraits<TString>::should_duplicate>::type>::save(ArduinoJson::JsonBuffer*, Destination&, Source) [with Destination = const char*; Source = const std::__cxx11::basic_string<char>&]	32	static
+../Core/Inc/ArduinoJson.h:2266:15:static bool ArduinoJson::Internals::ValueSaver<Source, Enable>::save(ArduinoJson::JsonBuffer*, Destination&, Source) [with Destination = ArduinoJson::JsonVariant; Source = const bool&; Enable = void]	48	static
+../Core/Inc/ArduinoJson.h:2275:15:static bool ArduinoJson::Internals::ValueSaver<Source, typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::StringTraits<TString>::should_duplicate>::type>::save(ArduinoJson::JsonBuffer*, Destination&, Source) [with Destination = ArduinoJson::JsonVariant; Source = const std::__cxx11::basic_string<char>&]	72	static
+../Core/Inc/ArduinoJson.h:2266:15:static bool ArduinoJson::Internals::ValueSaver<Source, Enable>::save(ArduinoJson::JsonBuffer*, Destination&, Source) [with Destination = ArduinoJson::JsonVariant; Source = const long unsigned int&; Enable = void]	48	static
+../Core/Inc/ArduinoJson.h:2266:15:static bool ArduinoJson::Internals::ValueSaver<Source, Enable>::save(ArduinoJson::JsonBuffer*, Destination&, Source) [with Destination = ArduinoJson::JsonVariant; Source = const float&; Enable = void]	48	static
+../Core/Inc/ArduinoJson.h:2266:15:static bool ArduinoJson::Internals::ValueSaver<Source, Enable>::save(ArduinoJson::JsonBuffer*, Destination&, Source) [with Destination = ArduinoJson::JsonVariant; Source = const unsigned char&; Enable = void]	48	static
+../Core/Inc/ArduinoJson.h:2158:12:ArduinoJson::Internals::ListIterator<T>::ListIterator(ArduinoJson::Internals::ListNode<T>*) [with T = ArduinoJson::JsonPair]	16	static
+../Core/Inc/ArduinoJson.h:2219:12:ArduinoJson::Internals::List<T>::iterator ArduinoJson::Internals::List<T>::begin() [with T = ArduinoJson::JsonPair]	24	static
+../Core/Inc/ArduinoJson.h:2168:8:bool ArduinoJson::Internals::ListIterator<T>::operator!=(const ArduinoJson::Internals::ListIterator<T>&) const [with T = ArduinoJson::JsonPair]	16	static
+../Core/Inc/ArduinoJson.h:2171:20:ArduinoJson::Internals::ListIterator<T>& ArduinoJson::Internals::ListIterator<T>::operator++() [with T = ArduinoJson::JsonPair]	16	static
+../Core/Inc/ArduinoJson.h:554:15:static bool ArduinoJson::Internals::StdStringTraits<TString>::equals(const TString&, const char*) [with TString = std::__cxx11::basic_string<char>]	24	static
+../Core/Inc/ArduinoJson.h:2433:8:ArduinoJson::JsonPair::JsonPair()	16	static
+../Core/Inc/ArduinoJson.h:2110:3:ArduinoJson::Internals::ListNode<T>::ListNode() [with T = ArduinoJson::JsonPair]	16	static
+../Core/Inc/ArduinoJson.h:541:22:static const char* ArduinoJson::Internals::StdStringTraits<TString>::duplicate(const TString&, Buffer*) [with Buffer = ArduinoJson::JsonBuffer; TString = std::__cxx11::basic_string<char>]	24	static
+../Core/Inc/ArduinoJson.h:1590:3:ArduinoJson::JsonVariant::JsonVariant(const TChar*, typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::IsChar<T>::value>::type*) [with TChar = char]	24	static
+../Core/Inc/ArduinoJson.h:1582:3:ArduinoJson::JsonVariant::JsonVariant(T, typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::IsUnsignedIntegral<T>::value>::type*) [with T = long unsigned int]	32	static
+../Core/Inc/ArduinoJson.h:1582:3:ArduinoJson::JsonVariant::JsonVariant(T, typename ArduinoJson::Internals::EnableIf<ArduinoJson::Internals::IsUnsignedIntegral<T>::value>::type*) [with T = unsigned char]	32	static
+../Core/Src/ps_message_sender.cpp:47:1:void __static_initialization_and_destruction_0(int, int)	64	static
+../Core/Src/ps_message_sender.cpp:47:1:cpp)	8	static
+../Core/Src/ps_message_sender.cpp:47:1:cpp)	8	static

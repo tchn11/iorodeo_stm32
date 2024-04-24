@@ -1,0 +1,2 @@
+../Core/Src/flash.cpp:11:6:void store_flash_memory(uint32_t, uint8_t*, uint16_t)	56	static
+../Core/Src/flash.cpp:45:6:void read_flash_memory(uint32_t, uint8_t*, uint16_t)	32	static

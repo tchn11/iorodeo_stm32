@@ -1,5 +1,7 @@
 #include "ps_periodic_test.h"
 #include "ps_time_utils.h"
+#include "string"
+using namespace std;
 
 namespace ps
 { 
@@ -188,7 +190,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = AmplitudeKey + String(" not a float");
+                string errorMsg = AmplitudeKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -212,7 +214,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = OffsetKey + String(" not a float");
+                string errorMsg = OffsetKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -231,7 +233,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = PeriodKey + String(" not uint32");
+                string errorMsg = PeriodKey + string(" not uint32");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -250,7 +252,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = NumCyclesKey + String(" not uint32");
+                string errorMsg = NumCyclesKey + string(" not uint32");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -281,14 +283,14 @@ namespace ps
                 else
                 {
                     status.success = false;
-                    String errorMsg = ShiftKey + String(" out of range");
+                    string errorMsg = ShiftKey + string(" out of range");
                     status.appendToMessage(errorMsg);
                 }
             }
             else
             {
                 status.success = false;
-                String errorMsg = ShiftKey + String(" not a float");
+                string errorMsg = ShiftKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }

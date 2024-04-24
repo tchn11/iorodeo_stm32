@@ -1,0 +1,49 @@
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\arm-none-eabi\include\c++\11.3.1\arm-none-eabi\thumb\v7e-m+fp\hard\bits\gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	1
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::VoltGain, short unsigned int>::~Range()	1
+../Core/Inc/ps_volt_range.h:15:13:ps::VoltRange::VoltRange()	1
+../Core/Inc/ps_volt_range.h:17:13:ps::VoltRange::VoltRange(std::string, float, float, ps::VoltGain, uint16_t)	1
+../Core/Inc/ps_volt_range.h:12:11:ps::VoltRange::~VoltRange()	1
+../Core/Inc/ps_volt_range.h:27:13:ps::VoltRangeDac::VoltRangeDac()	1
+../Core/Inc/ps_volt_range.h:29:13:ps::VoltRangeDac::VoltRangeDac(std::string, float, float, ps::VoltGain, uint16_t)	1
+../Core/Inc/ps_volt_range.h:38:13:ps::VoltRangeAdc::VoltRangeAdc()	1
+../Core/Inc/ps_volt_range.h:40:13:ps::VoltRangeAdc::VoltRangeAdc(std::string, float, float, ps::VoltGain, uint16_t)	1
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::CurrGainPath, short unsigned int>::~Range()	1
+../Core/Inc/ps_curr_range.h:16:13:ps::CurrRange::CurrRange()	1
+../Core/Inc/ps_curr_range.h:18:13:ps::CurrRange::CurrRange(std::string, float, float, ps::CurrGainPath, uint16_t)	1
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::VoltGain, short unsigned int>::Range(const ps::Range<ps::VoltGain, short unsigned int>&)	1
+../Core/Inc/ps_volt_range.h:12:11:ps::VoltRange::VoltRange(const ps::VoltRange&)	1
+../Core/Inc/ps_volt_range.h:22:11:ps::VoltRangeDac::VoltRangeDac(const ps::VoltRangeDac&)	1
+../Core/Inc/ps_volt_range.h:33:11:ps::VoltRangeAdc::VoltRangeAdc(const ps::VoltRangeAdc&)	1
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::CurrGainPath, short unsigned int>::Range(const ps::Range<ps::CurrGainPath, short unsigned int>&)	1
+../Core/Inc/ps_curr_range.h:13:11:ps::CurrRange::CurrRange(const ps::CurrRange&)	1
+../Core/Inc/ps_range.h:19:13:ps::Range<GainType, IntType>::Range() [with GainType = ps::VoltGain; IntType = short unsigned int]	1
+../Core/Inc/ps_range.h:41:5:ps::Range<GainType, IntType>::Range(std::string, float, float, GainType, IntType) [with GainType = ps::VoltGain; IntType = short unsigned int]	1
+../Core/Inc/ps_range.h:19:13:ps::Range<GainType, IntType>::Range() [with GainType = ps::CurrGainPath; IntType = short unsigned int]	1
+../Core/Inc/ps_range.h:41:5:ps::Range<GainType, IntType>::Range(std::string, float, float, GainType, IntType) [with GainType = ps::CurrGainPath; IntType = short unsigned int]	1
+../Core/Inc/ps_volt_range.h:22:11:ps::VoltRangeDac::~VoltRangeDac()	1
+../Core/Inc/ArrayDefinitions.h:26:1:Array<T, MAX_SIZE>::Array(const U (&)[N]) [with U = ps::VoltRangeDac; unsigned int N = 4; T = ps::VoltRangeDac; unsigned int MAX_SIZE = 4]	2
+../Core/Inc/ps_volt_range.h:33:11:ps::VoltRangeAdc::~VoltRangeAdc()	1
+../Core/Inc/ArrayDefinitions.h:26:1:Array<T, MAX_SIZE>::Array(const U (&)[N]) [with U = ps::VoltRangeAdc; unsigned int N = 4; T = ps::VoltRangeAdc; unsigned int MAX_SIZE = 4]	2
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/basic_string.h:6166:5:std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]	1
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/basic_string.h:6160:5:std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]	1
+../Core/Inc/ps_curr_range.h:13:11:ps::CurrRange::~CurrRange()	1
+../Core/Inc/ArrayDefinitions.h:26:1:Array<T, MAX_SIZE>::Array(const U (&)[N]) [with U = ps::CurrRange; unsigned int N = 4; T = ps::CurrRange; unsigned int MAX_SIZE = 4]	2
+../Core/Inc/ArrayDefinitions.h:85:6:void Array<T, MAX_SIZE>::fill(const U (&)[N]) [with U = ps::VoltRangeDac; unsigned int N = 4; T = ps::VoltRangeDac; unsigned int MAX_SIZE = 4]	1
+../Core/Inc/ArrayDefinitions.h:85:6:void Array<T, MAX_SIZE>::fill(const U (&)[N]) [with U = ps::VoltRangeAdc; unsigned int N = 4; T = ps::VoltRangeAdc; unsigned int MAX_SIZE = 4]	1
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/move.h:104:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&&) [with _Tp = std::__cxx11::basic_string<char>&]	1
+../Core/Inc/ArrayDefinitions.h:85:6:void Array<T, MAX_SIZE>::fill(const U (&)[N]) [with U = ps::CurrRange; unsigned int N = 4; T = ps::CurrRange; unsigned int MAX_SIZE = 4]	1
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::VoltGain, short unsigned int>& ps::Range<ps::VoltGain, short unsigned int>::operator=(const ps::Range<ps::VoltGain, short unsigned int>&)	1
+../Core/Inc/ps_volt_range.h:12:11:ps::VoltRange& ps::VoltRange::operator=(const ps::VoltRange&)	1
+../Core/Inc/ps_volt_range.h:22:11:ps::VoltRangeDac& ps::VoltRangeDac::operator=(const ps::VoltRangeDac&)	1
+../Core/Inc/ArrayDefinitions.h:111:6:void Array<T, MAX_SIZE>::assign(size_t, const U (&)[N]) [with U = ps::VoltRangeDac; unsigned int N = 4; T = ps::VoltRangeDac; unsigned int MAX_SIZE = 4]	2
+../Core/Inc/ps_volt_range.h:33:11:ps::VoltRangeAdc& ps::VoltRangeAdc::operator=(const ps::VoltRangeAdc&)	1
+../Core/Inc/ArrayDefinitions.h:111:6:void Array<T, MAX_SIZE>::assign(size_t, const U (&)[N]) [with U = ps::VoltRangeAdc; unsigned int N = 4; T = ps::VoltRangeAdc; unsigned int MAX_SIZE = 4]	2
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::CurrGainPath, short unsigned int>& ps::Range<ps::CurrGainPath, short unsigned int>::operator=(const ps::Range<ps::CurrGainPath, short unsigned int>&)	1
+../Core/Inc/ps_curr_range.h:13:11:ps::CurrRange& ps::CurrRange::operator=(const ps::CurrRange&)	1
+../Core/Inc/ArrayDefinitions.h:111:6:void Array<T, MAX_SIZE>::assign(size_t, const U (&)[N]) [with U = ps::CurrRange; unsigned int N = 4; T = ps::CurrRange; unsigned int MAX_SIZE = 4]	2
+../Core/Inc/Array.h:25:7:Array<ps::CurrRange, 4>::~Array()	3
+../Core/Inc/Array.h:25:7:Array<ps::VoltRangeAdc, 4>::~Array()	3
+../Core/Inc/Array.h:25:7:Array<ps::VoltRangeDac, 4>::~Array()	3
+../Core/Src/ps_constants.cpp:206:1:void __static_initialization_and_destruction_0(int, int)	10
+../Core/Src/ps_constants.cpp:206:1:cpp)	1
+../Core/Src/ps_constants.cpp:206:1:cpp)	1

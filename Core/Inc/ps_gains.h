@@ -1,8 +1,10 @@
 #ifndef PS_GAINS_H
 #define PS_GAINS_H
 
-#include <Arduino.h>
 #include "ps_hardware_defs.h"
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 namespace ps
 {
@@ -18,12 +20,12 @@ namespace ps
         NumVoltGain = 4
     };
 
-    const String VoltGainStringArray[NumVoltGain] = 
+    const string VoltGainStringArray[NumVoltGain] =
     {
-        String("VoltGain1X"),
-        String("VoltGain2X"),
-        String("VoltGain5X"),
-        String("VoltGain10X")
+        string("VoltGain1X"),
+        string("VoltGain2X"),
+        string("VoltGain5X"),
+        string("VoltGain10X")
     };
 
 #elif defined VOLTAGE_VARIANT_AD8251
@@ -38,13 +40,13 @@ namespace ps
         NumVoltGain = 5
     };
 
-    const String VoltGainStringArray[NumVoltGain] = 
+    const string VoltGainStringArray[NumVoltGain] =
     {
-        String("VoltGain1X"),
-        String("VoltGain2X"),
-        String("VoltGain4X"),
-        String("VoltGain8X"),
-        String("VoltGain10X")
+        string("VoltGain1X"),
+        string("VoltGain2X"),
+        string("VoltGain4X"),
+        string("VoltGain8X"),
+        string("VoltGain10X")
     };
 
 #else
@@ -62,18 +64,18 @@ namespace ps
     };
 
 
-    const String CurrGainPathStringArray[NumCurrGainPath] = 
+    const string CurrGainPathStringArray[NumCurrGainPath] =
     {
-        String("CurrGainPathIn1"),
-        String("CurrGainPathIn2"),
-        String("CurrGainPathIn3"),
-        String("CurrGainPathIn4"),
-        String("CurrGainPathErr")
+        string("CurrGainPathIn1"),
+        string("CurrGainPathIn2"),
+        string("CurrGainPathIn3"),
+        string("CurrGainPathIn4"),
+        string("CurrGainPathErr")
     };
 
-    String voltGainToString(VoltGain value);
+    string voltGainToString(VoltGain value);
 
-    String currGainPathToString(CurrGainPath value);
+    string currGainPathToString(CurrGainPath value);
 
 }
 #endif

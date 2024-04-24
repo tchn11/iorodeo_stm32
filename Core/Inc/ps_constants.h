@@ -6,6 +6,9 @@
 #include "ps_curr_range.h"
 #include "ps_filter.h"
 #include "Array.h"
+#include "string"
+#include "stdint.h"
+using namespace std;
 //#if defined DEVBOARD_ITSY_BITSY
 //    #include "FlashStorage.h"
 //#endif
@@ -13,10 +16,10 @@
 
 namespace ps
 {
-    extern const String FirmwareVersion;
-    extern const String HardwareVariant;
+    extern const string FirmwareVersion;
+    extern const string HardwareVariant;
 #if defined HARDWARE_VERSION_0P2
-    extern const String HardwareVersion;
+    extern const string HardwareVersion;
 #endif
 
     // Command tabe parameters
@@ -37,93 +40,93 @@ namespace ps
     extern const uint32_t UsbSerialBaudrate;
 
     // Json message keys 
-    extern const String CommandKey;
-    extern const String ResponseKey;
-    extern const String MessageKey;
-    extern const String SuccessKey;
-    extern const String TimeKey;
-    extern const String VoltKey;
-    extern const String CurrKey;
-    extern const String ChanKey;
-    extern const String RefVoltKey;
-    extern const String ParamKey;
-    extern const String VoltRangeKey;
-    extern const String CurrRangeKey;
-    extern const String QuietValueKey; 
-    extern const String QuietTimeKey;
-    extern const String DurationKey;
-    extern const String ValueKey;
-    extern const String StartValueKey;
-    extern const String FinalValueKey;
-    extern const String StepValueKey;
-    extern const String AmplitudeKey;
-    extern const String OffsetKey;
-    extern const String PeriodKey;
-    extern const String NumCyclesKey;
-    extern const String ShiftKey;
-    extern const String WindowKey;
-    extern const String DeviceIdKey;
-    extern const String SamplePeriodKey;
-    extern const String TestDoneTimeKey;
-    extern const String StepArrayKey;
-    extern const String TestNameArrayKey;
-    extern const String VersionKey;
-    extern const String VariantKey;
-    extern const String MuxEnabledKey;
-    extern const String MuxChannelKey;
-    extern const String ConnectedKey;
+    extern const string CommandKey;
+    extern const string ResponseKey;
+    extern const string MessageKey;
+    extern const string SuccessKey;
+    extern const string TimeKey;
+    extern const string VoltKey;
+    extern const string CurrKey;
+    extern const string ChanKey;
+    extern const string RefVoltKey;
+    extern const string ParamKey;
+    extern const string VoltRangeKey;
+    extern const string CurrRangeKey;
+    extern const string QuietValueKey;
+    extern const string QuietTimeKey;
+    extern const string DurationKey;
+    extern const string ValueKey;
+    extern const string StartValueKey;
+    extern const string FinalValueKey;
+    extern const string StepValueKey;
+    extern const string AmplitudeKey;
+    extern const string OffsetKey;
+    extern const string PeriodKey;
+    extern const string NumCyclesKey;
+    extern const string ShiftKey;
+    extern const string WindowKey;
+    extern const string DeviceIdKey;
+    extern const string SamplePeriodKey;
+    extern const string TestDoneTimeKey;
+    extern const string StepArrayKey;
+    extern const string TestNameArrayKey;
+    extern const string VersionKey;
+    extern const string VariantKey;
+    extern const string MuxEnabledKey;
+    extern const string MuxChannelKey;
+    extern const string ConnectedKey;
 #if defined HARDWARE_VERSION_0P2
-    extern const String ElectAutoConnectKey;
+    extern const string ElectAutoConnectKey;
 #endif
 
 
     // Json command strings
-    extern const String RunTestCmd;
-    extern const String StopTestCmd;
-    extern const String GetVoltCmd;
-    extern const String SetVoltCmd;
-    extern const String GetCurrCmd;
-    extern const String GetRefVoltCmd;
-    extern const String SetParamCmd;
-    extern const String GetParamCmd;
-    extern const String SetVoltRangeCmd;
-    extern const String GetVoltRangeCmd;
-    extern const String SetCurrRangeCmd;
-    extern const String GetCurrRangeCmd;
-    extern const String SetDeviceIdCmd;
-    extern const String GetDeviceIdCmd;
-    extern const String SetSamplePeriodCmd;
-    extern const String GetSamplePeriodCmd;
-    extern const String GetTestDoneTimeCmd;
-    extern const String GetTestNamesCmd;
-    extern const String GetVersionCmd;
-    extern const String GetVariantCmd;
-    extern const String SetMuxEnabledCmd;
-    extern const String GetMuxEnabledCmd;
-    extern const String SetEnabledMuxChanCmd;
-    extern const String GetEnabledMuxChanCmd;
-    extern const String GetMuxTestNamesCmd;
-    extern const String SetMuxRefElectConnCmd;
-    extern const String GetMuxRefElectConnCmd;
-    extern const String SetMuxCtrElectConnCmd;
-    extern const String GetMuxCtrElectConnCmd;
-    extern const String SetMuxWrkElectConnCmd;
-    extern const String GetMuxWrkElectConnCmd;
-    extern const String DisconnAllMuxElectCmd;
+    extern const string RunTestCmd;
+    extern const string StopTestCmd;
+    extern const string GetVoltCmd;
+    extern const string SetVoltCmd;
+    extern const string GetCurrCmd;
+    extern const string GetRefVoltCmd;
+    extern const string SetParamCmd;
+    extern const string GetParamCmd;
+    extern const string SetVoltRangeCmd;
+    extern const string GetVoltRangeCmd;
+    extern const string SetCurrRangeCmd;
+    extern const string GetCurrRangeCmd;
+    extern const string SetDeviceIdCmd;
+    extern const string GetDeviceIdCmd;
+    extern const string SetSamplePeriodCmd;
+    extern const string GetSamplePeriodCmd;
+    extern const string GetTestDoneTimeCmd;
+    extern const string GetTestNamesCmd;
+    extern const string GetVersionCmd;
+    extern const string GetVariantCmd;
+    extern const string SetMuxEnabledCmd;
+    extern const string GetMuxEnabledCmd;
+    extern const string SetEnabledMuxChanCmd;
+    extern const string GetEnabledMuxChanCmd;
+    extern const string GetMuxTestNamesCmd;
+    extern const string SetMuxRefElectConnCmd;
+    extern const string GetMuxRefElectConnCmd;
+    extern const string SetMuxCtrElectConnCmd;
+    extern const string GetMuxCtrElectConnCmd;
+    extern const string SetMuxWrkElectConnCmd;
+    extern const string GetMuxWrkElectConnCmd;
+    extern const string DisconnAllMuxElectCmd;
 #if defined HARDWARE_VERSION_0P2
-    extern const String SetRefElectConnCmd;
-    extern const String GetRefElectConnCmd;
-    extern const String SetCtrElectConnCmd;
-    extern const String GetCtrElectConnCmd;
-    extern const String SetWrkElectConnCmd;
-    extern const String GetWrkElectConnCmd;
-    extern const String SetAllElectConnCmd;
-    extern const String GetAllElectConnCmd;
-    extern const String SetElectAutoConnCmd;
-    extern const String GetElectAutoConnCmd;
-    extern const String SetRefElectVoltRangeCmd;
-    extern const String GetRefElectVoltRangeCmd;
-    extern const String GetHardwareVersionCmd; 
+    extern const string SetRefElectConnCmd;
+    extern const string GetRefElectConnCmd;
+    extern const string SetCtrElectConnCmd;
+    extern const string GetCtrElectConnCmd;
+    extern const string SetWrkElectConnCmd;
+    extern const string GetWrkElectConnCmd;
+    extern const string SetAllElectConnCmd;
+    extern const string GetAllElectConnCmd;
+    extern const string SetElectAutoConnCmd;
+    extern const string GetElectAutoConnCmd;
+    extern const string SetRefElectVoltRangeCmd;
+    extern const string GetRefElectVoltRangeCmd;
+    extern const string GetHardwareVersionCmd;
 #endif
 
     // Ranges for output voltage

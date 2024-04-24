@@ -1,0 +1,12 @@
+../Core/Src/ps_electrode_switch.cpp:8:5:ps::ElectrodeSwitch::ElectrodeSwitch()	16	static
+../Core/Src/ps_electrode_switch.cpp:10:10:void ps::ElectrodeSwitch::initialize()	16	static
+../Core/Src/ps_electrode_switch.cpp:18:10:bool ps::ElectrodeSwitch::connected(GPIO_TypeDef*, int)	32	static
+../Core/Src/ps_electrode_switch.cpp:31:10:void ps::ElectrodeSwitch::setConnected(GPIO_TypeDef*, int, bool)	24	static
+../Core/Src/ps_electrode_switch.cpp:44:10:bool ps::ElectrodeSwitch::ctrConnected()	16	static
+../Core/Src/ps_electrode_switch.cpp:49:10:void ps::ElectrodeSwitch::setCtrConnected(bool)	16	static
+../Core/Src/ps_electrode_switch.cpp:54:10:bool ps::ElectrodeSwitch::refConnected()	16	static
+../Core/Src/ps_electrode_switch.cpp:59:10:void ps::ElectrodeSwitch::setRefConnected(bool)	16	static
+../Core/Src/ps_electrode_switch.cpp:64:10:bool ps::ElectrodeSwitch::wrkConnected()	16	static
+../Core/Src/ps_electrode_switch.cpp:69:10:void ps::ElectrodeSwitch::setWrkConnected(bool)	16	static
+../Core/Src/ps_electrode_switch.cpp:74:10:bool ps::ElectrodeSwitch::allConnected()	16	static
+../Core/Src/ps_electrode_switch.cpp:79:10:void ps::ElectrodeSwitch::setAllConnected(bool)	16	static

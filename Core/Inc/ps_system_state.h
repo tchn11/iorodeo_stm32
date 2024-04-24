@@ -1,6 +1,5 @@
 #ifndef PS_SYSTEM_STATE_H
 #define PS_SYSTEM_STATE_H
-#include <Arduino.h>
 #include "ps_hardware_defs.h"
 #include "ps_constants.h"
 #include "ps_return_status.h"

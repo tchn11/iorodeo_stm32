@@ -1,0 +1,85 @@
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\arm-none-eabi\include\c++\11.3.1\arm-none-eabi\thumb\v7e-m+fp\hard\bits\gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::VoltGain, short unsigned int>::~Range()	16	static
+../Core/Inc/ps_volt_range.h:15:13:ps::VoltRange::VoltRange()	16	static
+../Core/Inc/ps_volt_range.h:12:11:ps::VoltRange::~VoltRange()	16	static
+../Core/Inc/ps_volt_range.h:27:13:ps::VoltRangeDac::VoltRangeDac()	16	static
+../Core/Inc/ps_volt_range.h:38:13:ps::VoltRangeAdc::VoltRangeAdc()	16	static
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::CurrGainPath, short unsigned int>::~Range()	16	static
+../Core/Inc/ps_curr_range.h:16:13:ps::CurrRange::CurrRange()	16	static
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/type_traits:70:17:constexpr std::integral_constant<_Tp, __v>::operator std::integral_constant<_Tp, __v>::value_type() const [with _Tp = bool; _Tp __v = true]	16	static
+../Core/Inc/ps_return_status.h:16:13:ps::ReturnStatus::ReturnStatus()	16	static
+../Core/Inc/exteranl_analog.h:36:11:uint16_t spi_analog::getVal1() const	16	static
+../Core/Inc/exteranl_analog.h:38:11:uint16_t spi_analog::getVal2() const	16	static
+../Core/Inc/ps_volt_range.h:22:11:ps::VoltRangeDac::~VoltRangeDac()	16	static
+../Core/Inc/ps_curr_range.h:13:11:ps::CurrRange::~CurrRange()	16	static
+../Core/Inc/ps_volt_range.h:33:11:ps::VoltRangeAdc::~VoltRangeAdc()	16	static
+../Core/Src/ps_analog_subsystem.cpp:26:5:ps::AnalogSubsystem::AnalogSubsystem()	16	static
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::VoltGain, short unsigned int>::Range(const ps::Range<ps::VoltGain, short unsigned int>&)	16	static
+../Core/Inc/ps_volt_range.h:12:11:ps::VoltRange::VoltRange(const ps::VoltRange&)	16	static
+../Core/Inc/ps_volt_range.h:22:11:ps::VoltRangeDac::VoltRangeDac(const ps::VoltRangeDac&)	16	static
+../Core/Inc/ps_volt_range.h:33:11:ps::VoltRangeAdc::VoltRangeAdc(const ps::VoltRangeAdc&)	16	static
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::CurrGainPath, short unsigned int>::Range(const ps::Range<ps::CurrGainPath, short unsigned int>&)	16	static
+../Core/Inc/ps_curr_range.h:13:11:ps::CurrRange::CurrRange(const ps::CurrRange&)	16	static
+../Core/Src/ps_analog_subsystem.cpp:28:10:void ps::AnalogSubsystem::initialize()	128	static
+../Core/Src/ps_analog_subsystem.cpp:93:10:void ps::AnalogSubsystem::setVolt(float)	16	static
+../Core/Src/ps_analog_subsystem.cpp:100:11:float ps::AnalogSubsystem::getVolt() const	16	static
+../Core/Src/ps_analog_subsystem.cpp:107:11:float ps::AnalogSubsystem::getCurr() const	24	static
+../Core/Src/ps_analog_subsystem.cpp:114:11:float ps::AnalogSubsystem::getRefElectVolt() const	24	static
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::VoltGain, short unsigned int>& ps::Range<ps::VoltGain, short unsigned int>::operator=(const ps::Range<ps::VoltGain, short unsigned int>&)	16	static
+../Core/Inc/ps_volt_range.h:12:11:ps::VoltRange& ps::VoltRange::operator=(const ps::VoltRange&)	16	static
+../Core/Inc/ps_volt_range.h:22:11:ps::VoltRangeDac& ps::VoltRangeDac::operator=(const ps::VoltRangeDac&)	16	static
+../Core/Src/ps_analog_subsystem.cpp:121:10:void ps::AnalogSubsystem::setVoltRange(ps::VoltRangeDac)	16	static
+../Core/Src/ps_analog_subsystem.cpp:130:10:bool ps::AnalogSubsystem::autoVoltRange(float, float)	176	static
+../Core/Src/ps_analog_subsystem.cpp:169:18:ps::VoltRangeDac ps::AnalogSubsystem::getVoltRange() const	16	static
+../Core/Inc/ps_range.h:15:11:ps::Range<ps::CurrGainPath, short unsigned int>& ps::Range<ps::CurrGainPath, short unsigned int>::operator=(const ps::Range<ps::CurrGainPath, short unsigned int>&)	16	static
+../Core/Inc/ps_curr_range.h:13:11:ps::CurrRange& ps::CurrRange::operator=(const ps::CurrRange&)	16	static
+../Core/Src/ps_analog_subsystem.cpp:176:10:void ps::AnalogSubsystem::setCurrRange(ps::CurrRange)	16	static
+../Core/Src/ps_analog_subsystem.cpp:184:15:ps::CurrRange ps::AnalogSubsystem::getCurrRange() const	16	static
+../Core/Src/ps_analog_subsystem.cpp:191:18:ps::ReturnStatus ps::AnalogSubsystem::setVoltRangeByName(std::string)	208	static
+../Core/Src/ps_analog_subsystem.cpp:212:12:std::string ps::AnalogSubsystem::getVoltRangeName() const	16	static
+../Core/Src/ps_analog_subsystem.cpp:219:12:std::string ps::AnalogSubsystem::getCurrRangeName() const	16	static
+../Core/Src/ps_analog_subsystem.cpp:225:18:ps::ReturnStatus ps::AnalogSubsystem::setCurrRangeByName(std::string)	208	static
+../Core/Inc/ps_volt_range.h:33:11:ps::VoltRangeAdc& ps::VoltRangeAdc::operator=(const ps::VoltRangeAdc&)	16	static
+../Core/Src/ps_analog_subsystem.cpp:248:10:void ps::AnalogSubsystem::setRefElectVoltRange(ps::VoltRangeAdc)	16	static
+../Core/Src/ps_analog_subsystem.cpp:257:18:ps::VoltRangeAdc ps::AnalogSubsystem::getRefElectVoltRange() const	16	static
+../Core/Src/ps_analog_subsystem.cpp:265:18:ps::ReturnStatus ps::AnalogSubsystem::setRefElectVoltRangeByName(std::string)	208	static
+../Core/Src/ps_analog_subsystem.cpp:287:12:std::string ps::AnalogSubsystem::getRefElectVoltRangeName() const	16	static
+../Core/Src/ps_analog_subsystem.cpp:295:10:bool ps::AnalogSubsystem::autoRefElectVoltRange(float, float)	176	static
+../Core/Src/ps_analog_subsystem.cpp:337:10:void ps::AnalogSubsystem::setVoltGain(ps::VoltGain)	16	static
+../Core/Src/ps_analog_subsystem.cpp:415:14:ps::VoltGain ps::AnalogSubsystem::getVoltGain() const	24	static
+../Core/Src/ps_analog_subsystem.cpp:462:10:void ps::AnalogSubsystem::setCurrGainPath(ps::CurrGainPath)	16	static
+../Core/Src/ps_analog_subsystem.cpp:550:18:ps::CurrGainPath ps::AnalogSubsystem::getCurrGainPath() const	24	static
+../Core/Src/ps_analog_subsystem.cpp:611:12:std::string ps::AnalogSubsystem::getVoltGainString() const	24	static
+../Core/Src/ps_analog_subsystem.cpp:619:12:std::string ps::AnalogSubsystem::getCurrGainPathString() const	24	static
+../Core/Src/ps_analog_subsystem.cpp:627:10:void ps::AnalogSubsystem::setValueDac(uint16_t)	16	static
+../Core/Src/ps_analog_subsystem.cpp:635:14:uint16_t ps::AnalogSubsystem::getValueDac() const	16	static
+../Core/Src/ps_analog_subsystem.cpp:642:14:uint16_t ps::AnalogSubsystem::getTransAmpAin() const	16	static
+../Core/Src/ps_analog_subsystem.cpp:649:14:uint16_t ps::AnalogSubsystem::getRefElectAin() const	16	static
+../Core/Src/ps_analog_subsystem.cpp:656:10:void ps::AnalogSubsystem::setRefElectVoltGain(ps::VoltGain)	16	static
+../Core/Src/ps_analog_subsystem.cpp:689:14:ps::VoltGain ps::AnalogSubsystem::getRefElectVoltGain() const	24	static
+../Core/Inc/ps_range.h:19:13:ps::Range<GainType, IntType>::Range() [with GainType = ps::VoltGain; IntType = short unsigned int]	16	static
+../Core/Inc/ps_range.h:19:13:ps::Range<GainType, IntType>::Range() [with GainType = ps::CurrGainPath; IntType = short unsigned int]	16	static
+../Core/Inc/ps_range.h:76:20:IntType ps::Range<GainType, IntType>::valueToInt(float) const [with GainType = ps::VoltGain; IntType = short unsigned int]	24	static
+../Core/Inc/ps_range.h:83:18:float ps::Range<GainType, IntType>::intToValue(IntType) const [with GainType = ps::VoltGain; IntType = short unsigned int]	16	static
+../Core/Inc/ps_range.h:83:18:float ps::Range<GainType, IntType>::intToValue(IntType) const [with GainType = ps::CurrGainPath; IntType = short unsigned int]	16	static
+../Core/Inc/ps_range.h:64:14:GainType ps::Range<GainType, IntType>::gain() const [with GainType = ps::VoltGain; IntType = short unsigned int]	16	static
+../Core/Inc/ArrayDefinitions.h:154:8:size_t Array<T, MAX_SIZE>::size() const [with T = ps::VoltRangeDac; unsigned int MAX_SIZE = 4]	16	static
+../Core/Inc/ArrayDefinitions.h:41:5:T& Array<T, MAX_SIZE>::operator[](size_t) [with T = ps::VoltRangeDac; unsigned int MAX_SIZE = 4]	16	static
+../Core/Inc/ps_range.h:52:11:float ps::Range<GainType, IntType>::minValue() const [with GainType = ps::VoltGain; IntType = short unsigned int]	16	static
+../Core/Inc/ps_range.h:58:11:float ps::Range<GainType, IntType>::maxValue() const [with GainType = ps::VoltGain; IntType = short unsigned int]	16	static
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_algobase.h:254:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	16	static
+../Core/Inc/ps_range.h:64:14:GainType ps::Range<GainType, IntType>::gain() const [with GainType = ps::CurrGainPath; IntType = short unsigned int]	16	static
+../Core/Inc/ps_range.h:46:12:std::string ps::Range<GainType, IntType>::name() const [with GainType = ps::VoltGain; IntType = short unsigned int]	16	static
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/basic_string.h:6160:5:std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]	24	static
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/basic_string.h:6172:5:std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]	56	static
+../Core/Inc/ps_range.h:46:12:std::string ps::Range<GainType, IntType>::name() const [with GainType = ps::CurrGainPath; IntType = short unsigned int]	16	static
+../Core/Inc/ArrayDefinitions.h:154:8:size_t Array<T, MAX_SIZE>::size() const [with T = ps::CurrRange; unsigned int MAX_SIZE = 4]	16	static
+../Core/Inc/ArrayDefinitions.h:41:5:T& Array<T, MAX_SIZE>::operator[](size_t) [with T = ps::CurrRange; unsigned int MAX_SIZE = 4]	16	static
+../Core/Inc/ArrayDefinitions.h:154:8:size_t Array<T, MAX_SIZE>::size() const [with T = ps::VoltRangeAdc; unsigned int MAX_SIZE = 4]	16	static
+../Core/Inc/ArrayDefinitions.h:41:5:T& Array<T, MAX_SIZE>::operator[](size_t) [with T = ps::VoltRangeAdc; unsigned int MAX_SIZE = 4]	16	static
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_algobase.h:230:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = short unsigned int]	16	static
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/move.h:104:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&&) [with _Tp = std::__cxx11::basic_string<char>&]	16	static
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/allocator.h:204:7:bool std::operator==(const std::allocator<char>&, const std::allocator<char>&)	16	static
+../Core/Src/ps_analog_subsystem.cpp:716:1:void __static_initialization_and_destruction_0(int, int)	64	static
+../Core/Src/ps_analog_subsystem.cpp:716:1:cpp)	8	static
+../Core/Src/ps_analog_subsystem.cpp:716:1:cpp)	8	static

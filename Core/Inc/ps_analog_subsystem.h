@@ -1,12 +1,18 @@
 #ifndef PS_ANALOG_SUBSYSTEM_H
 #define PS_ANALOG_SUBSYSTEM_H
 
+#include "stm32f4xx.h"
+
 #include "ps_hardware_defs.h"
 #include "ps_pin_map.h"
 #include "ps_gains.h"
 #include "ps_volt_range.h"
 #include "ps_curr_range.h"
 #include "ps_return_status.h"
+
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 #include "exteranl_analog.h"
 
@@ -26,18 +32,18 @@ namespace ps
             static const uint16_t MaxValueDac = uint16_t((uint32_t(1) << DefaultAnalogWriteResolution)-1);
             static const uint16_t MidValueDac = MaxValueDac/2;
 #elif defined DEVBOARD_ITSY_BITSY
-            static const uint16_t DefaultAnalogWriteResolution = 12;
-            static const uint16_t DefaultAnalogReadResolution = 12;
-            static const eAnalogReference DefaultAnalogReference = AR_DEFAULT;
+            static const uint16_t DefaultAnalogWriteResolution;
+            static const uint16_t DefaultAnalogReadResolution;
+            //static const eAnalogReference DefaultAnalogReference = AR_DEFAULT;
             // ----------------------------------------------------------------------------------------------
             // Temporary  - to check system prior to changing resistor values
             // ----------------------------------------------------------------------------------------------
-            static const uint16_t MaxValueAin = uint16_t((uint32_t(1) << DefaultAnalogReadResolution) -1);
-            static const uint16_t MaxValueDac = uint16_t((uint32_t(1) << DefaultAnalogWriteResolution)-1);
+            static const uint16_t MaxValueAin;
+            static const uint16_t MaxValueDac;
             //static const uint16_t MaxValueAin = 1489;
             //static const uint16_t MaxValueDac = 1489;
             // ----------------------------------------------------------------------------------------------
-            static const uint16_t MidValueDac = MaxValueDac/2;
+            static const uint16_t MidValueDac;
 #endif
 
             AnalogSubsystem();
@@ -56,18 +62,18 @@ namespace ps
             void setCurrRange(CurrRange range);  
             CurrRange getCurrRange() const;      
 
-            ReturnStatus setVoltRangeByName(String voltRangeName);
-            String getVoltRangeName() const;   
+            ReturnStatus setVoltRangeByName(string voltRangeName);
+            string getVoltRangeName() const;
 
-            ReturnStatus setCurrRangeByName(String currRangeName);
-            String getCurrRangeName() const;   
+            ReturnStatus setCurrRangeByName(string currRangeName);
+            string getCurrRangeName() const;
 
 #if defined HARDWARE_VERSION_0P2
             void setRefElectVoltRange(VoltRangeAdc range);
             VoltRangeAdc getRefElectVoltRange() const;
 
-            ReturnStatus setRefElectVoltRangeByName(String voltRangeName);
-            String getRefElectVoltRangeName() const;
+            ReturnStatus setRefElectVoltRangeByName(string voltRangeName);
+            string getRefElectVoltRangeName() const;
             bool autoRefElectVoltRange(float minVolt, float maxVolt);
 #endif
 
@@ -85,8 +91,8 @@ namespace ps
             void setCurrGainPath(CurrGainPath value); 
             CurrGainPath getCurrGainPath() const;
 
-            String getVoltGainString() const;
-            String getCurrGainPathString() const;
+            string getVoltGainString() const;
+            string getCurrGainPathString() const;
 
             void setValueDac(uint16_t value); 
             uint16_t getValueDac() const;     

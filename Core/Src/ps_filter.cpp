@@ -1,5 +1,7 @@
 #include "ps_filter.h"
-#include <Arduino.h>
+#include "string"
+#include "math.h"
+using namespace std;
 
 namespace ps 
 {
@@ -20,8 +22,8 @@ namespace ps
     void LowPass::setParam(float cutoffFreq, unsigned int order, float value)
     {
         param_.initialValue = value;
-        param_.order = min(order,MaxOrder_);
-        param_.order = max(param_.order,MinOrder_);
+        param_.order = min(order,(unsigned int)5);
+        param_.order = max(param_.order,(unsigned int)1);
         setCutoffFreq(cutoffFreq);
     }
 

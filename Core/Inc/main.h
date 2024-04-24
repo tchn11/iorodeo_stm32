@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "potentiostat.h"
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -41,7 +41,7 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+static SPI_HandleTypeDef hspi2;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
@@ -55,7 +55,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-extern "C" void timerCallback();
+void timerCallback();
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

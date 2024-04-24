@@ -1,13 +1,27 @@
 #include "ps_analog_subsystem.h"
 #include "ps_constants.h"
-
+#include "stm32f4xx.h"
 #include "stm32f4xx_hal_gpio.h"
 #include "stm32f4xx_hal_pwr.h"
+#include <string>
 
 namespace ps
 {
     // AnalogSubsystem public methods
     // --------------------------------------------------------------------------------------------
+
+const uint16_t AnalogSubsystem::DefaultAnalogWriteResolution = 12;
+const uint16_t AnalogSubsystem::DefaultAnalogReadResolution = 12;
+//static const eAnalogReference DefaultAnalogReference = AR_DEFAULT;
+// ----------------------------------------------------------------------------------------------
+// Temporary  - to check system prior to changing resistor values
+// ----------------------------------------------------------------------------------------------
+const uint16_t AnalogSubsystem::MaxValueAin = uint16_t((uint32_t(1) << DefaultAnalogReadResolution) -1);
+const uint16_t AnalogSubsystem::MaxValueDac = uint16_t((uint32_t(1) << DefaultAnalogWriteResolution)-1);
+//static const uint16_t MaxValueAin = 1489;
+//static const uint16_t MaxValueDac = 1489;
+// ----------------------------------------------------------------------------------------------
+const uint16_t AnalogSubsystem::MidValueDac = MaxValueDac/2;
 
     AnalogSubsystem::AnalogSubsystem() {}
 
@@ -64,12 +78,12 @@ namespace ps
 #   error "CURRENT_VARIANT must be specified"
 #endif
         // Initialize analog input/output subsystem
-        analogWriteResolution(DefaultAnalogWriteResolution);
-        analogReadResolution(DefaultAnalogReadResolution);
+        //analogWriteResolution(DefaultAnalogWriteResolution);
+        //analogReadResolution(DefaultAnalogReadResolution);
 #if defined DEVBOARD_TEENSY
         analogReadAveraging(DefaultAnalogReadAveraging);
 #endif
-        analogReference(DefaultAnalogReference);
+        //analogReference(DefaultAnalogReference);
 
         // Set output voltage to zero
         setValueDac(MidValueDac); 
@@ -174,13 +188,13 @@ namespace ps
     }
 
 
-    ReturnStatus AnalogSubsystem::setVoltRangeByName(String voltRangeName)
+    ReturnStatus AnalogSubsystem::setVoltRangeByName(string voltRangeName)
     {
         ReturnStatus status;
         bool found = false;
         for (size_t i=0; i<VoltRangeDacArray.size(); i++)
         {
-            if (voltRangeName.equals(VoltRangeDacArray[i].name()))
+            if (voltRangeName.compare(VoltRangeDacArray[i].name()))
             {
                 found = true;
                 setVoltRange(VoltRangeDacArray[i]);
@@ -189,33 +203,33 @@ namespace ps
         if (!found)
         {
             status.success = false;
-            status.message = String("voltRange, ") + voltRangeName + String(", not found");
+            status.message = string("voltRange, ") + voltRangeName + string(", not found");
         }
         return status;
     }
 
 
-    String AnalogSubsystem::getVoltRangeName() const
+    string AnalogSubsystem::getVoltRangeName() const
     { 
         // Returns a string representation of the voltage range setting
         return voltRange_.name();
     }
 
 
-    String AnalogSubsystem::getCurrRangeName() const
+    string AnalogSubsystem::getCurrRangeName() const
     {
         // Returns a string representation of the current range
         return currRange_.name();
     }
 
-    ReturnStatus AnalogSubsystem::setCurrRangeByName(String currRangeName)
+    ReturnStatus AnalogSubsystem::setCurrRangeByName(string currRangeName)
     {
         ReturnStatus status;
         bool found = false;
 
         for (size_t i=0; i<CurrRangeArray.size(); i++)
         {
-            if (currRangeName.equals(CurrRangeArray[i].name()))
+            if (currRangeName.compare(CurrRangeArray[i].name()))
             {
                 found = true;
                 setCurrRange(CurrRangeArray[i]);
@@ -225,7 +239,7 @@ namespace ps
         if (!found)
         {
             status.success = false;
-            status.message = String("currRange, ") + currRangeName + String(", not found");
+            status.message = string("currRange, ") + currRangeName + string(", not found");
         }
         return status;
     }
@@ -248,13 +262,13 @@ namespace ps
 #endif
 
 #if defined HARDWARE_VERSION_0P2 
-    ReturnStatus AnalogSubsystem::setRefElectVoltRangeByName(String voltRangeName)
+    ReturnStatus AnalogSubsystem::setRefElectVoltRangeByName(string voltRangeName)
     {
         ReturnStatus status;
         bool found = false;
         for (size_t i=0; i<VoltRangeAdcArray.size(); i++)
         {
-            if (voltRangeName.equals(VoltRangeAdcArray[i].name()))
+            if (voltRangeName.compare(VoltRangeAdcArray[i].name()))
             {
                 found = true;
                 setRefElectVoltRange(VoltRangeAdcArray[i]);
@@ -263,14 +277,14 @@ namespace ps
         if (!found)
         {
             status.success = false;
-            status.message = String("voltRange, ") + voltRangeName + String(", not found");
+            status.message = string("voltRange, ") + voltRangeName + string(", not found");
         }
         return status;
     }
 #endif
 
 #if defined HARDWARE_VERSION_0P2 
-    String AnalogSubsystem::getRefElectVoltRangeName() const
+    string AnalogSubsystem::getRefElectVoltRangeName() const
     {
         // Returns a string representation of the reference electrode voltage range setting
         return refElectVoltRange_.name();
@@ -405,23 +419,23 @@ namespace ps
         uint8_t value0 = digitalRead(AD8250_GAIN_A0);
         uint8_t  value1 = digitalRead(AD8250_GAIN_A1);
 #elif defined HARDWARE_VERSION_0P2
-        uint8_t value0 = digitalRead(DAC_GAIN_A0);
-        uint8_t  value1 = digitalRead(DAC_GAIN_A1);
+        uint8_t value0 = HAL_GPIO_ReadPin(DAC_GAIN_A0_GPIO_Port, DAC_GAIN_A0_Pin);
+        uint8_t  value1 = HAL_GPIO_ReadPin(DAC_GAIN_A1_GPIO_Port, DAC_GAIN_A1_Pin);
 #else
 #   error "HARDWARE_VERSION must be specified"
 #endif
         VoltGain voltGain;  
 
-        if ((value0 == LOW) && (value1 == LOW))
+        if ((value0 == GPIO_PIN_RESET) && (value1 == GPIO_PIN_RESET))
         {
             voltGain = VoltGain1X;
         }
-        else if ((value0 == HIGH) && (value1 == LOW))
+        else if ((value0 == GPIO_PIN_SET) && (value1 == GPIO_PIN_RESET))
         {
             voltGain =  VoltGain2X;
         }
 #if defined(VOLTAGE_VARIANT_AD8250) || defined(VOLTAGE_VARIANT_10V)
-        else if ((value0 == HIGH) && (value1 == LOW))
+        else if ((value0 == GPIO_PIN_SET) && (value1 == GPIO_PIN_RESET))
         {
             voltGain = VoltGain5X;
         }
@@ -569,22 +583,22 @@ namespace ps
             currGainPath = CurrGainPathIn4;
         }
 #elif defined HARDWARE_VERSION_0P2
-        uint8_t a0 = digitalRead(TIA_GAIN_A0);
-        uint8_t a1 = digitalRead(TIA_GAIN_A1);
+        uint8_t a0 = HAL_GPIO_ReadPin(TIA_GAIN_A0_GPIO_Port, TIA_GAIN_A0_Pin);
+        uint8_t a1 = HAL_GPIO_ReadPin(TIA_GAIN_A1_GPIO_Port, TIA_GAIN_A1_Pin);
 
-        if ((a0 == LOW) && (a1 == LOW)) 
+        if ((a0 == GPIO_PIN_RESET) && (a1 == GPIO_PIN_RESET))
         {
             currGainPath = CurrGainPathIn1;
         }
-        else if ((a0 == HIGH) && (a1 == LOW))
+        else if ((a0 == GPIO_PIN_SET) && (a1 == GPIO_PIN_RESET))
         {
             currGainPath = CurrGainPathIn2;
         }
-        else if ((a0 == LOW) && (a1 == HIGH))
+        else if ((a0 == GPIO_PIN_RESET) && (a1 == GPIO_PIN_SET))
         {
             currGainPath = CurrGainPathIn3;
         }
-        else if ((a0 == HIGH) && (a1 == HIGH))
+        else if ((a0 == GPIO_PIN_SET) && (a1 == GPIO_PIN_SET))
         {
             currGainPath = CurrGainPathIn4;
         }
@@ -594,7 +608,7 @@ namespace ps
         return currGainPath;
     }
 
-    String AnalogSubsystem::getVoltGainString() const
+    string AnalogSubsystem::getVoltGainString() const
     {
         // Returns a string representation for voltage gain
         VoltGain voltGain = getVoltGain();
@@ -602,7 +616,7 @@ namespace ps
     }
 
 
-    String AnalogSubsystem::getCurrGainPathString() const
+    string AnalogSubsystem::getCurrGainPathString() const
     {
         // Returns a string representation for current gain path
         CurrGainPath currGainPath = getCurrGainPath();
@@ -613,7 +627,7 @@ namespace ps
     void AnalogSubsystem::setValueDac(uint16_t value)
     {
         // The value of the output voltage Dac
-        valueDac_ = min(value,MaxValueDac);
+        valueDac_ = min(value,AnalogSubsystem::MaxValueDac);
         PWM_timer->CCR1 = valueDac_;
     }
 
@@ -646,23 +660,23 @@ namespace ps
         switch (value) 
         {
             case VoltGain1X:
-                digitalWrite(REF_GAIN_A0,LOW);
-                digitalWrite(REF_GAIN_A1,LOW);
+            	HAL_GPIO_WritePin(REF_GAIN_A0_GPIO_Port, REF_GAIN_A0_Pin, GPIO_PIN_RESET);
+            	HAL_GPIO_WritePin(REF_GAIN_A1_GPIO_Port, REF_GAIN_A1_Pin, GPIO_PIN_RESET);
                 break;
 
             case VoltGain2X:
-                digitalWrite(REF_GAIN_A0,HIGH);
-                digitalWrite(REF_GAIN_A1,LOW);
+            	HAL_GPIO_WritePin(REF_GAIN_A0_GPIO_Port, REF_GAIN_A0_Pin, GPIO_PIN_SET);
+            	HAL_GPIO_WritePin(REF_GAIN_A1_GPIO_Port, REF_GAIN_A1_Pin, GPIO_PIN_RESET);
                 break;
 
             case VoltGain5X:
-                digitalWrite(REF_GAIN_A0,LOW);
-                digitalWrite(REF_GAIN_A1,HIGH);
+            	HAL_GPIO_WritePin(REF_GAIN_A0_GPIO_Port, REF_GAIN_A0_Pin, GPIO_PIN_RESET);
+            	HAL_GPIO_WritePin(REF_GAIN_A1_GPIO_Port, REF_GAIN_A1_Pin, GPIO_PIN_SET);
                 break;
 
             case VoltGain10X:
-                digitalWrite(REF_GAIN_A0,HIGH);
-                digitalWrite(REF_GAIN_A1,HIGH);
+            	HAL_GPIO_WritePin(REF_GAIN_A0_GPIO_Port, REF_GAIN_A0_Pin, GPIO_PIN_SET);
+            	HAL_GPIO_WritePin(REF_GAIN_A1_GPIO_Port, REF_GAIN_A1_Pin, GPIO_PIN_SET);
                 break;
 
             default:
@@ -674,19 +688,19 @@ namespace ps
 #if defined HARDWARE_VERSION_0P2
     VoltGain AnalogSubsystem::getRefElectVoltGain() const
     {
-        uint8_t value0 = digitalRead(REF_GAIN_A0);
-        uint8_t  value1 = digitalRead(REF_GAIN_A1);
+        uint8_t value0 = HAL_GPIO_ReadPin(REF_GAIN_A0_GPIO_Port, REF_GAIN_A0_Pin);
+        uint8_t  value1 = HAL_GPIO_ReadPin(REF_GAIN_A1_GPIO_Port, REF_GAIN_A1_Pin);
         VoltGain voltGain;  
 
-        if ((value0 == LOW) && (value1 == LOW))
+        if ((value0 == GPIO_PIN_RESET) && (value1 == GPIO_PIN_RESET))
         {
             voltGain = VoltGain1X;
         }
-        else if ((value0 == HIGH) && (value1 == LOW))
+        else if ((value0 == GPIO_PIN_SET) && (value1 == GPIO_PIN_RESET))
         {
             voltGain =  VoltGain2X;
         }
-        else if ((value0 == HIGH) && (value1 == LOW))
+        else if ((value0 == GPIO_PIN_SET) && (value1 == GPIO_PIN_RESET))
         {
             voltGain = VoltGain5X;
         }

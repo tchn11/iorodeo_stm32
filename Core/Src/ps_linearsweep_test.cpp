@@ -1,6 +1,8 @@
 #include "ps_linearsweep_test.h"
 #include "ps_time_utils.h"
 #include "ps_constants.h"
+#include "string"
+using namespace std;
 
 namespace ps
 {
@@ -154,7 +156,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = StartValueKey + String(" not a float");
+                string errorMsg = StartValueKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -178,7 +180,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = FinalValueKey + String(" not a float");
+                string errorMsg = FinalValueKey + string(" not a float");
                 status.appendToMessage(errorMsg);
             }
         }
@@ -197,7 +199,7 @@ namespace ps
             else
             {
                 status.success = false;
-                String errorMsg = DurationKey + String(" not uint32");
+                string errorMsg = DurationKey + string(" not uint32");
                 status.appendToMessage(errorMsg);
             }
         }

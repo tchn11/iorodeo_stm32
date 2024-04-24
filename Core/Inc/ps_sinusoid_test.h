@@ -3,7 +3,6 @@
 
 #include "ps_periodic_test.h"
 #include "ps_lookup_table.h"
-#include <Arduino.h>
 
 namespace ps
 {

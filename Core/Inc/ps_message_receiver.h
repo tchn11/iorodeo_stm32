@@ -1,9 +1,11 @@
 #ifndef PS_MESSAGE_RECEIVER_H 
 #define PS_MESSAGE_RECEIVER_H
 
-#include <Arduino.h>
 #include "ps_constants.h"
 #include "ps_circular_buffer.h"
+#include "string"
+#include "stdint.h"
+using namespace std;
 
 namespace ps
 {
@@ -16,7 +18,7 @@ namespace ps
             MessageReceiver();
             void reset();
             void readData();
-            String next();
+            string next();
             bool available() const;
             uint32_t getMessageCnt() const;
             uint32_t getTotalMessageCnt() const;
